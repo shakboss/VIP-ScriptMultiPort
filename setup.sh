@@ -418,6 +418,9 @@ systemctl restart stunnel4
 #echo -e "[ ${green}INFO${NC} ] All finished... " 
 #wget "https://raw.githubusercontent.com/FasterExE/VIP-ScriptMultiPort/main/udp/set.sh" -O set.sh && chmod +x set.sh && ./set.sh
 ##########
+systemctl stop apache2
+systemctl restart nginx
+systemctl restart stunnel4
 echo " "
 echo "====================-[ Ilyass Najhi VPN-STORE ]-===================="
 echo ""
