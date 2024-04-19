@@ -1,5 +1,5 @@
 [Unit]
-Description=Websocket-OpenSSH By Dedi Humaedi
+Description=Websocket-OpenSSH By Ilyass Najhi
 Documentation=https://google.com
 After=network.target nss-lookup.target
 
