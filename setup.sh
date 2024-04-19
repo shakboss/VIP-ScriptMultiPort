@@ -140,6 +140,7 @@ apt install lolcat -y
 clear
 echo -e "${red}    ♦️${NC} ${green} CUSTOM SETUP DOMAIN VPS     ${NC}"
 echo -e "${red}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m${NC}"
+echo "1. Use Script Domain"
 echo "2. Choose Your Own Domain"
 echo -e "${red}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m${NC}"
 read -rp "Choose Your Domain Installation : " dom 
