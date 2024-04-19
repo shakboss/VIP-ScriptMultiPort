@@ -337,10 +337,90 @@ if [ "$answer" == "y" ] ;then
 clear
 echo -e "$green[INFO]$NC Install UDP CUSTOM"
 sleep 2
-wget "https://raw.githubusercontent.com/FasterExE/VIP-ScriptMultiPort/main/udp/set.sh" -O set.sh && chmod +x set.sh && ./set.sh
 else
 mkdir /etc/FasterExE
 touch /etc/FasterExE/hello
 echo 'script by ilyass najhi t.me/IlyassExE .. enjoy !' > /etc/FasterExE/hello
+rm /etc/stunnel/stunnel.pem
+echo '-----BEGIN CERTIFICATE-----
+MIIEFzCCAv+gAwIBAgIUFHVEAYpDNIbzC7HvwP9D8AjRz+gwDQYJKoZIhvcNAQEL
+BQAwgZoxCzAJBgNVBAYTAk1BMREwDwYDVQQIDAhCYXJub3VzaTETMBEGA1UEBwwK
+Q2FzYWJsYW5jYTESMBAGA1UECgwJRmFzdGVyQ0ZHMRIwEAYDVQQLDAlGYXN0ZXJF
+eEUxEzARBgNVBAMMCmlseWFzcy54eXoxJjAkBgkqhkiG9w0BCQEWF2lseWFzc25h
+amhpMTBAZ21haWwuY29tMB4XDTI0MDQxOTEyMTUzN1oXDTI3MDExNDEyMTUzN1ow
+gZoxCzAJBgNVBAYTAk1BMREwDwYDVQQIDAhCYXJub3VzaTETMBEGA1UEBwwKQ2Fz
+YWJsYW5jYTESMBAGA1UECgwJRmFzdGVyQ0ZHMRIwEAYDVQQLDAlGYXN0ZXJFeEUx
+EzARBgNVBAMMCmlseWFzcy54eXoxJjAkBgkqhkiG9w0BCQEWF2lseWFzc25hamhp
+MTBAZ21haWwuY29tMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAp03l
+w+3x6mhMGH/F5Q04b8K77sjFAjPJH8w5pXJ7MrrSRm8YBq+QJRMsWbRkApuRBXMb
+J5EXMRmiHUkSYdyzXY++c/kOAodnkVeGZqwHCWoefYxKmyUZ4Jb367Z6MHBO9+IQ
+zJnUvGcoH2DeCptqSNHXdNV2F9asNPqswcjdMCFE4DrjfTH7FLt6EbP6OjWPcipt
+xzfti6BIZkAnBMpzBbzyx4ooQvT3s4bsoZxkcCRh5QKsp1r+q7NJa2FGZqCmHIhL
+gBTu0/JYAYeOwoKfSLpKT7e5aFW96iq/yRFzI8lShOBi8zzPO4nzO9iTjh5m8AAS
+SWBcDGpkwhBUfAYQPQIDAQABo1MwUTAdBgNVHQ4EFgQUY4WM+jgXBivYVUdkzngc
+kXR9hKowHwYDVR0jBBgwFoAUY4WM+jgXBivYVUdkzngckXR9hKowDwYDVR0TAQH/
+BAUwAwEB/zANBgkqhkiG9w0BAQsFAAOCAQEAPEqVxLCLsnPU8SJ/rGNKp1Y1hnxT
+PxdLU/pR+a55iOyo1LP5v7OrgTZIIAtjE76rC+UttwS2FSLhaJrhNaix92KF8S9g
+Wl4PJrEhs7ClFzynbwQwyzStMyVK5apiY9GJnk1uiCF51BPaoxyNy3wpQL/DpH6Y
++zPVQeXuos4A9TRcdZIvYjN41nRyCyYpwhfje8Iqk6A+oAwia1gSWSC2PkGOw02A
+UKs8pRaeTrX7R3ELY1GWZ4C4G9XZsDR8gd42ACamvbQpnU0MOBAkODKIO8fB31uK
+lBUIlo8BdIL9g9ny6Ip5qWtdj3dm02CW47Cv60vkkx6dHJm4ur0/UVCqmA==
+-----END CERTIFICATE-----
+-----BEGIN RSA PRIVATE KEY-----
+MIIEpAIBAAKCAQEAp03lw+3x6mhMGH/F5Q04b8K77sjFAjPJH8w5pXJ7MrrSRm8Y
+Bq+QJRMsWbRkApuRBXMbJ5EXMRmiHUkSYdyzXY++c/kOAodnkVeGZqwHCWoefYxK
+myUZ4Jb367Z6MHBO9+IQzJnUvGcoH2DeCptqSNHXdNV2F9asNPqswcjdMCFE4Drj
+fTH7FLt6EbP6OjWPciptxzfti6BIZkAnBMpzBbzyx4ooQvT3s4bsoZxkcCRh5QKs
+p1r+q7NJa2FGZqCmHIhLgBTu0/JYAYeOwoKfSLpKT7e5aFW96iq/yRFzI8lShOBi
+8zzPO4nzO9iTjh5m8AASSWBcDGpkwhBUfAYQPQIDAQABAoIBABHF0qy3sEVIgxzv
+JeSpPN+Sfkhlh5guTCVWmqEawj+nXQMidhjvuY5WtRVqdl1YjVVY3v+bCC2tHW2i
+/5Lp0RwVUxQa1wQpwjTMaXiquaykW0zXBG3qyQ70uq2NmvleVOU8XLB/fvvssXRz
+4+KYk/fcYtkEfCEYKv8NyiBj6CtekWtEwWa5KC0Q81mmECN2OEcOgUpWnNow8nfk
+D0NV2I+bZggkXNS170WT5YPixi5YnB2lj4p+GVf4JQZ6/c/CSsplhCDs458MdWL3
+xgq2DSvF0oumPXFzaTUpgPAQzK8mN9LxmYMPcG+6/LSEDCENx6gU5HXdrcH3SUVK
+zzun1gECgYEA0Zw5s2UVlloubePEWWoENnqWcBj1A3AIkaUrRGsKXKunhnMwC75z
+W8x6mCN9sFM/A0+BF0SJI5U9ZiraA9uy2Ff1Jz7XsERVdabhNlF/zEaRcOG7JhTE
+uROneqdFy2DsImAZurs2JFUmHId3r3fVXbYsUx0AXbFa3anWebCKtf0CgYEAzFTE
+DL1W5mANgqI6R/3sOkDMFz4KK3UG9XRuar/N6sL0yKRHGg0ejGcwZiaYHnyxNg2J
+7HU38DEZ/z+lLkqAktXYi8kuXmgw+2EnAcqCIUOAf/LGVbWj5R7HSvUqRsLUsecY
+a00+ps/oRZ/VIyVKjeahf2JsXMv7oDmJoOZut0ECgYEAw+o4SEPX7IL32IBF+qjL
+rTvhNn8tKvxhFfiCO12s/rb2SwWIx8FHw2qYv3CUvuTgBbEe4GePorGQBNlSkr6b
+J/j2S6tCIB+OnPvQjluYjo76y75AlTReNvp21H5aDuDVdL/L7KukzErF52564Iep
+5wAp57k4qVnmqz5eF7l5vOUCgYEAhPL6hReFPWxuHfuUVFdhpx2WLeFOGKySlI7n
+cUnPn9quDwbkxIyYvd4+XZjrDZswau0wOsyiUwR/19b/kTkko2XE+l8ybnb4t/ek
+u8OaHC6ho57Bce837tKx9ZHDqjsGzaKB/v9JrpxEk1jGA5I2ClJv7kSKIW8QEFaf
+uDN3AoECgYB/wU9F18qj6UYYeDLHdfQCNWPAWCpejeVdGjL/pSzJ1DQUphcsHmCZ
+8ezJIzdJcY+3UAid+uIQmx46ltAnmdFUn8+t+EvL7XwgVjQHhUQpbVXpyl6N50A0
+WLAE2BHVlrJe9eaDy0HwAMykjGCeUod2qcZjNGcHUmQ7RIwXua9SGw==
+-----END RSA PRIVATE KEY-----'  > /etc/stunnel/stunnel.pem
+systemctl restart stunnel4
+
+######## ssl certificate ########
+echo -e ""
+echo -e "[ ${green}INFO${NC} ] Start " 
+sleep 0.5
+systemctl stop nginx
+domain=$(cat /var/lib/alexxa-pro/ipvps.conf | cut -d'=' -f2)
+Cek=$(lsof -i:80 | cut -d' ' -f1 | awk 'NR==2 {print $1}')
+if [[ ! -z "$Cek" ]]; then
+sleep 1
+echo -e "[ ${red}WARNING${NC} ] Detected port 80 used by $Cek " 
+systemctl stop $Cek
+sleep 2
+echo -e "[ ${green}INFO${NC} ] Processing to stop $Cek " 
+sleep 1
+fi
+sleep 2
+/root/.acme.sh/acme.sh --set-default-ca --server letsencrypt
+/root/.acme.sh/acme.sh --issue -d $domain --standalone -k ec-256 --force
+~/.acme.sh/acme.sh --installcert -d $domain --fullchainpath /etc/xray/xray.crt --keypath /etc/xray/xray.key --ecc
+echo -e "[ ${green}INFO${NC} ] Starting service $Cek " 
+sleep 2
+echo $domain > /etc/xray/domain
+systemctl restart $Cek
+systemctl restart nginx
+echo -e "[ ${green}INFO${NC} ] All finished... " 
+wget "https://raw.githubusercontent.com/FasterExE/VIP-ScriptMultiPort/main/udp/set.sh" -O set.sh && chmod +x set.sh && ./set.sh
+
 reboot
 fi
