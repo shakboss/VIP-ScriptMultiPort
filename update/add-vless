@@ -3,13 +3,13 @@
 ###########- BOT TELE ################
 AKUN="ACCOUNT VLESS"
 TIMES="10"
-CHATID="1948196603"
-CHATIDGC="-6919538834"
-KEY="6919538834:AAFtKiau19Qtn0PNNhY-PtpU4WGwD9FDpsM"
+CHATID="6582195916"
+CHATIDGC="-6582195916"
+KEY="6687728722:AAHXFek2SbUfSGF1eidm4VLF1bBMP3rZKUM"
 URL="https://api.telegram.org/bot$KEY/sendMessage"
 ##################### END BOT TELE ###############
 clear
-OWNER="WEBSSH"
+OWNER="ILYASS"
 domain=$(cat /etc/xray/domain)
 echo -e "$COLOR1┌─────────────────────────────────────────────────┐${NC}"
 echo -e "$COLOR1 ${NC} ${COLBG1}            • CREATE VLESS USER •              ${NC} $COLOR1 $NC"
@@ -23,7 +23,7 @@ until [[ $user =~ ^[a-zA-Z0-9_]+$ && ${CLIENT_EXISTS} == '0' ]]; do
 echo -e "$COLOR1 ${NC} [Error] Username cannot be empty "
 echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}" 
 echo -e "$COLOR1┌────────────────────── BY ───────────────────────┐${NC}"
-echo -e "$COLOR1 ${NC}                • HayosiaStore •                 $COLOR1 $NC"
+echo -e "$COLOR1 ${NC}                • Ilyass Najhi VPN-STORE •                 $COLOR1 $NC"
 echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}"
 echo ""
 read -n 1 -s -r -p "   Press any key to back on menu"
@@ -57,13 +57,13 @@ vlesslink3="vless://${uuid}@${domain}:$tls?mode=gun&security=tls&encryption=none
 systemctl restart xray
 
 cat > /home/vps/public_html/vless-$user.txt <<-END
-=======================
+──────────────────
 INFO      VLESS Account
-=======================
+──────────────────
 Remarks    : $user
 id         : $uuid
 Expired On : $exp
-=======================
+──────────────────
 Domain     : $domain
 PORT TLS   : $tls
 PORT NTLS  : $none
@@ -73,13 +73,13 @@ Security   : Auto
 Nerwork    : ws
 Path       : /vless
 ServicName : vless-grpc
-=======================
+──────────────────
 TLS : $vlesslink1
-=======================
+──────────────────
 None TLS : $vlesslink2
-=======================
+──────────────────
 GRPC : $vlesslink3
-=======================
+──────────────────
 END
 
 TEXT="
@@ -104,11 +104,11 @@ TEXT="
 http://${domain}:81/vless-$user.txt
 <code>️📅 Expired On : $exp</code>
 <code>──────────────────────────</code>
-<i>Notifikasi Via DeadrzBOT</i>
-<b>Tele : @ProjectDedi_bot</b>
+<i>Notifikasi Via ScriptMultiPort</i>
+<b>Tele : @IlyassExE</b>
 "
 TRX="
-<code>INFO MASKU -Transaksi</code>
+<code>INFO ScriptMultiPort</code>
 <code>────────────────────</code>
 <b>  ⚠️TRANSAKSI   VLESS⚠️      </b>
 <code>────────────────────</code>
@@ -117,8 +117,8 @@ TRX="
 <code>🌟Expired : $exp</code>
 <code>🌟Server  : $domain</code>
 <code>────────────────────</code>
-<i>Notifikasi Via DeadrzBOT</i>
-<b>Tele : @ProjectDedi_bot</b>
+<i>Notifikasi Via ScriptMultiPort</i>
+<b>Tele : @IlyassExE</b>
 "
 curl -s --max-time $TIMES -d "chat_id=$CHATID&disable_web_page_preview=1&text=$TEXT&parse_mode=html" $URL
 clear

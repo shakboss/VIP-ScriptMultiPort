@@ -10,7 +10,7 @@ COLBG1="$(cat /etc/alexxa/theme/$colornow | grep -w "BG" | cut -d: -f2|sed 's/ /
 ###########- END COLOR CODE -##########
 
 BURIQ () {
-    curl -sS https://raw.githubusercontent.com/ghafoorali176/ip/main/access > /root/tmp
+    curl -sS https://raw.githubusercontent.com/FasterExE/VIP-ScriptMultiPort/main/access > /root/tmp
     data=( `cat /root/tmp | grep -E "^### " | awk '{print $2}'` )
     for user in "${data[@]}"
     do
@@ -28,7 +28,7 @@ BURIQ () {
 }
 
 MYIP=$(curl -sS ipv4.icanhazip.com)
-Name=$(curl -sS https://raw.githubusercontent.com/ghafoorali176/ip/main/access | grep $MYIP | awk '{print $2}')
+Name=$(curl -sS https://raw.githubusercontent.com/FasterExE/VIP-ScriptMultiPort/main/access | grep $MYIP | awk '{print $2}')
 echo $Name > /usr/local/etc/.$Name.ini
 CekOne=$(cat /usr/local/etc/.$Name.ini)
 
@@ -45,7 +45,7 @@ fi
 
 PERMISSION () {
     MYIP=$(curl -sS ipv4.icanhazip.com)
-    IZIN=$(curl -sS https://raw.githubusercontent.com/ghafoorali176/ip/main/access | awk '{print $4}' | grep $MYIP)
+    IZIN=$(curl -sS https://raw.githubusercontent.com/FasterExE/VIP-ScriptMultiPort/main/access | awk '{print $4}' | grep $MYIP)
     if [ "$MYIP" = "$IZIN" ]; then
     Bloman
     else
@@ -91,7 +91,7 @@ if grep -qw "$Login" /etc/xray/ssh.txt; then
 echo -e "$COLOR1 ${NC}  [Error] Username \e[31m$Login\e[0m already exist"
 echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}" 
 echo -e "$COLOR1┌────────────────────── BY ───────────────────────┐${NC}"
-echo -e "$COLOR1 ${NC}                • Ghafoor Ali VPN-STORE •                 $COLOR1 $NC"
+echo -e "$COLOR1 ${NC}                • Ilyass Najhi VPN-STORE •                 $COLOR1 $NC"
 echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}"
 echo ""
 read -n 1 -s -r -p "  Press any key to back on menu"
@@ -104,7 +104,7 @@ if [ -z $Login ]; then
 echo -e "$COLOR1 ${NC} [Error] Username cannot be empty "
 echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}" 
 echo -e "$COLOR1┌────────────────────── BY ───────────────────────┐${NC}"
-echo -e "$COLOR1 ${NC}                • Ghafoor Ali VPN-STORE •                 $COLOR1 $NC"
+echo -e "$COLOR1 ${NC}                • Ilyass Najhi VPN-STORE •                 $COLOR1 $NC"
 echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}"
 echo ""
 read -n 1 -s -r -p "    Press any key to back on menu"
@@ -116,7 +116,7 @@ if [ -z $Pass ]; then
 echo -e "$COLOR1 ${NC}  [Error] Password cannot be empty "
 echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}" 
 echo -e "$COLOR1┌────────────────────── BY ───────────────────────┐${NC}"
-echo -e "$COLOR1 ${NC}                • Ghafoor Ali VPN-STORE •                 $COLOR1 $NC"
+echo -e "$COLOR1 ${NC}                • Ilyass Najhi VPN-STORE •                 $COLOR1 $NC"
 echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}"
 echo ""
 read -n 1 -s -r -p "   Press any key to back on menu"
@@ -127,7 +127,7 @@ if [ -z $masaaktif ]; then
 echo -e "$COLOR1 ${NC}  [Error] EXP Date cannot be empty "
 echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}" 
 echo -e "$COLOR1┌────────────────────── BY ───────────────────────┐${NC}"
-echo -e "$COLOR1 ${NC}                • Ghafoor Ali VPN-STORE •                 $COLOR1 $NC"
+echo -e "$COLOR1 ${NC}                • Ilyass Najhi VPN-STORE •                 $COLOR1 $NC"
 echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}"
 echo ""
 read -n 1 -s -r -p "  Press any key to back on menu"
@@ -177,7 +177,7 @@ echo -e "$COLOR1┌────────────────────�
 echo -e "  GET wss://who.int/ HTTP/1.1[crlf]Host: $domen [crlf]Upgrade: websocket[crlf][crlf]" | tee -a /etc/log-create-user.log
 echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}"  | tee -a /etc/log-create-user.log
 echo -e "$COLOR1┌────────────────────── BY ───────────────────────┐${NC}" | tee -a /etc/log-create-user.log
-echo -e "$COLOR1 ${NC}                • Ghafoor Ali VPN-STORE •                 $COLOR1 $NC" | tee -a /etc/log-create-user.log
+echo -e "$COLOR1 ${NC}                • Ilyass Najhi VPN-STORE •                 $COLOR1 $NC" | tee -a /etc/log-create-user.log
 echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}" | tee -a /etc/log-create-user.log
 else
 echo -e "$COLOR1┌─────────────────────────────────────────────────┐${NC}" | tee -a /etc/log-create-user.log
@@ -202,7 +202,7 @@ echo -e "$COLOR1┌────────────────────�
 echo -e "  GET wss://who.int/ HTTP/1.1[crlf]Host: $domen [crlf]Upgrade: websocket[crlf][crlf]" | tee -a /etc/log-create-user.log
 echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}"  | tee -a /etc/log-create-user.log
 echo -e "$COLOR1┌────────────────────── BY ───────────────────────┐${NC}" | tee -a /etc/log-create-user.log
-echo -e "$COLOR1 ${NC}                • Ghafoor Ali VPN-STORE •                 $COLOR1 $NC" | tee -a /etc/log-create-user.log
+echo -e "$COLOR1 ${NC}                • Ilyass Najhi VPN-STORE •                 $COLOR1 $NC" | tee -a /etc/log-create-user.log
 echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}" | tee -a /etc/log-create-user.log
 fi
 echo -e ""
@@ -219,8 +219,8 @@ else
 wget -q -O /usr/bin/proxy3.js "https://raw.githubusercontent.com/ghafoorali176/MULTI-PORT/main/ssh/proxy3.js"
 cat <<EOF > /etc/systemd/system/sshws.service
 [Unit]
-Description=WSenabler
-Documentation=https://SSHAXOR.MY.ID
+Description=WS enabler By Ilyass Najhi
+Documentation=https://t.me/IlyassExE
 
 [Service]
 Type=simple
@@ -241,7 +241,7 @@ echo -e "$COLOR1┌────────────────────�
 echo -e "$COLOR1 ${NC} ${COLBG1}               • WEBSOCKET MENU •              ${NC} $COLOR1 $NC"
 echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}"
 echo -e "$COLOR1┌─────────────────────────────────────────────────┐${NC}" 
-wget -q -O /usr/bin/ssh-wsenabler "https://raw.githubusercontent.com/ghafoorali176/MULTI-PORT/main/ssh/sshws-true.sh" && chmod +x /usr/bin/ssh-wsenabler
+wget -q -O /usr/bin/ssh-wsenabler "https://raw.githubusercontent.com/FasterExE/VIP-ScriptMultiPort/main/ssh/sshws-true.sh" && chmod +x /usr/bin/ssh-wsenabler
 systemctl daemon-reload >/dev/null 2>&1
 systemctl enable sshws.service >/dev/null 2>&1
 systemctl start sshws.service >/dev/null 2>&1
@@ -251,7 +251,7 @@ echo -e "$COLOR1 ${NC}  [INFO] • Restart is require for Changes"
 echo -e "$COLOR1 ${NC}           to take effect"
 echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}" 
 echo -e "$COLOR1┌────────────────────── BY ───────────────────────┐${NC}"
-echo -e "$COLOR1 ${NC}                • Ghafoor Ali VPN-STORE •                 $COLOR1 $NC"
+echo -e "$COLOR1 ${NC}                • Ilyass Najhi VPN-STORE •                 $COLOR1 $NC"
 echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}"
 echo -e ""
 read -n 1 -s -r -p "  Press any key to back on menu"
@@ -272,7 +272,7 @@ echo -e "$COLOR1 ${NC}  [INFO] • Restart is require for Changes"
 echo -e "$COLOR1 ${NC}           to take effect"
 echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}" 
 echo -e "$COLOR1┌────────────────────── BY ───────────────────────┐${NC}"
-echo -e "$COLOR1 ${NC}                • Ghafoor Ali VPN-STORE •                 $COLOR1 $NC"
+echo -e "$COLOR1 ${NC}                • Ilyass Najhi VPN-STORE •                 $COLOR1 $NC"
 echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}"
 echo -e ""
 read -n 1 -s -r -p "  Press any key to back on menu"
@@ -296,7 +296,7 @@ echo -e "$COLOR1 $NC"
 echo -e "$COLOR1 $NC   ${COLOR1}[00]${NC} • GO BACK"
 echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}" 
 echo -e "$COLOR1┌────────────────────── BY ───────────────────────┐${NC}"
-echo -e "$COLOR1 ${NC}                • Ghafoor Ali VPN-STORE •                 $COLOR1 $NC"
+echo -e "$COLOR1 ${NC}                • Ilyass Najhi VPN-STORE •                 $COLOR1 $NC"
 echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}"
 echo ""
 read -p " Select menu :  "  opt
@@ -374,7 +374,7 @@ rm -f /tmp/vpn-login-tcp.txt
 rm -f /tmp/vpn-login-udp.txt
 echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}" 
 echo -e "$COLOR1┌────────────────────── BY ───────────────────────┐${NC}"
-echo -e "$COLOR1 ${NC}                • Ghafoor Ali VPN-STORE •                 $COLOR1 $NC"
+echo -e "$COLOR1 ${NC}                • Ilyass Najhi VPN-STORE •                 $COLOR1 $NC"
 echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}"
 echo "";
 read -n 1 -s -r -p "   Press any key to back on menu"
@@ -402,7 +402,7 @@ fi
 fi
 echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}" 
 echo -e "$COLOR1┌────────────────────── BY ───────────────────────┐${NC}"
-echo -e "$COLOR1 ${NC}                • Ghafoor Ali VPN-STORE •                 $COLOR1 $NC"
+echo -e "$COLOR1 ${NC}                • Ilyass Najhi VPN-STORE •                 $COLOR1 $NC"
 echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}"
 echo -e ""
 read -n 1 -s -r -p "   Press any key to back on menu"
@@ -423,7 +423,7 @@ else
 echo -e "$COLOR1 ${NC}   [INFO] Failure: User $User Not Exist."
 echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}" 
 echo -e "$COLOR1┌────────────────────── BY ───────────────────────┐${NC}"
-echo -e "$COLOR1 ${NC}                • Ghafoor Ali VPN-STORE •                 $COLOR1 $NC"
+echo -e "$COLOR1 ${NC}                • Ilyass Najhi VPN-STORE •                 $COLOR1 $NC"
 echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}"
 echo ""
 read -n 1 -s -r -p "   Press any key to back on menu"
@@ -434,7 +434,7 @@ if [ -z $User ]; then
 echo -e "$COLOR1 ${NC}   [Error] Username cannot be empty "
 echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}" 
 echo -e "$COLOR1┌────────────────────── BY ───────────────────────┐${NC}"
-echo -e "$COLOR1 ${NC}                • Ghafoor Ali VPN-STORE •                 $COLOR1 $NC"
+echo -e "$COLOR1 ${NC}                • Ilyass Najhi VPN-STORE •                 $COLOR1 $NC"
 echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}"
 echo ""
 read -n 1 -s -r -p "   Press any key to back on menu"
@@ -466,7 +466,7 @@ echo -e "   Days Added : $Days Days"
 echo -e "   Expires on : $Expiration_Display"
 echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}" 
 echo -e "$COLOR1┌────────────────────── BY ───────────────────────┐${NC}"
-echo -e "$COLOR1 ${NC}                • Ghafoor Ali VPN-STORE •                 $COLOR1 $NC"
+echo -e "$COLOR1 ${NC}                • Ilyass Najhi VPN-STORE •                 $COLOR1 $NC"
 echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}"
 else
 clear
@@ -477,7 +477,7 @@ echo -e "$COLOR1┌────────────────────�
 echo -e "   Username Doesnt Exist      "
 echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}" 
 echo -e "$COLOR1┌────────────────────── BY ───────────────────────┐${NC}"
-echo -e "$COLOR1 ${NC}                • Ghafoor Ali VPN-STORE •                 $COLOR1 $NC"
+echo -e "$COLOR1 ${NC}                • Ilyass Najhi VPN-STORE •                 $COLOR1 $NC"
 echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}"
 fi
 echo ""
@@ -515,7 +515,7 @@ echo -e "$COLOR1┌────────────────────�
 echo "   Total: $JUMLAH User"
 echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}" 
 echo -e "$COLOR1┌────────────────────── BY ───────────────────────┐${NC}"
-echo -e "$COLOR1 ${NC}                • Ghafoor Ali VPN-STORE •                 $COLOR1 $NC"
+echo -e "$COLOR1 ${NC}                • Ilyass Najhi VPN-STORE •                 $COLOR1 $NC"
 echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}"
 echo ""
 read -n 1 -s -r -p "   Press any key to back on menu"
@@ -573,7 +573,7 @@ echo -e "$COLOR1┌────────────────────�
 echo -e "  GET wss://who.int/ HTTP/1.1[crlf]Host: $domen [crlf]Upgrade: websocket[crlf][crlf]"
 echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}" 
 echo -e "$COLOR1┌────────────────────── BY ───────────────────────┐${NC}"
-echo -e "$COLOR1 ${NC}                • Ghafoor Ali VPN-STORE •                 $COLOR1 $NC"
+echo -e "$COLOR1 ${NC}                • Ilyass Najhi VPN-STORE •                 $COLOR1 $NC"
 echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}"
 
 else
@@ -600,7 +600,7 @@ echo -e "$COLOR1┌────────────────────�
 echo -e "$COLOR1 ${NC}  GET wss://who.int/ HTTP/1.1[crlf]Host: $domen [crlf]Upgrade: websocket[crlf][crlf]"
 echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}" 
 echo -e "$COLOR1┌────────────────────── BY ───────────────────────┐${NC}"
-echo -e "$COLOR1 ${NC}                • Ghafoor Ali VPN-STORE •                 $COLOR1 $NC"
+echo -e "$COLOR1 ${NC}                • Ilyass Najhi VPN-STORE •                 $COLOR1 $NC"
 echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}"
 fi
 echo ""
@@ -620,7 +620,7 @@ echo -e " $COLOR1┌────────────────────
  $COLOR1 $NC   ${COLOR1}[00]${NC} • GO BACK${NC}                              $COLOR1 $NC"
 echo -e " $COLOR1└───────────────────────────────────────────────┘${NC}" 
 echo -e "$COLOR1┌────────────────────── BY ───────────────────────┐${NC}"
-echo -e "$COLOR1 ${NC}                • Ghafoor Ali VPN-STORE •                 $COLOR1 $NC"
+echo -e "$COLOR1 ${NC}                • Ilyass Najhi VPN-STORE •                 $COLOR1 $NC"
 echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}"
 echo -e ""
 read -p " Select menu :  "  opt

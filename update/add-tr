@@ -2,9 +2,9 @@
 ###########- BOT TELE ################
 AKUN="ACCOUNT TROJAN"
 TIMES="10"
-CHATID="1948196603"
-CHATIDGC="-6919538834"
-KEY="6919538834:AAFtKiau19Qtn0PNNhY-PtpU4WGwD9FDpsM"
+CHATID="6582195916"
+CHATIDGC="-6582195916"
+KEY="6687728722:AAHXFek2SbUfSGF1eidm4VLF1bBMP3rZKUM"
 URL="https://api.telegram.org/bot$KEY/sendMessage"
 ##################### END BOT TELE ###############
 
@@ -18,12 +18,12 @@ tr="$(cat ~/log-install.txt | grep -w "Trojan WS " | cut -d: -f2|sed 's/ //g')"
 until [[ $user =~ ^[a-zA-Z0-9_]+$ && ${user_EXISTS} == '0' ]]; do
 read -rp "   Input Username : " -e user
 OWNER="WEBTROJAN"
-CHATIDGC="-958733342"
+CHATIDGC="-6582195916"
 if [ -z $user ]; then
 echo -e "$COLOR1 ${NC}   [Error] Username cannot be empty "
 echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}" 
 echo -e "$COLOR1┌────────────────────── BY ───────────────────────┐${NC}"
-echo -e "$COLOR1 ${NC}                • Ghafoor Ali VPN-STORE •                 $COLOR1 $NC"
+echo -e "$COLOR1 ${NC}                • Ilyass Najhi VPN-STORE •                 $COLOR1 $NC"
 echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}"
 echo ""
 read -n 1 -s -r -p "   Press any key to back on menu"
@@ -39,7 +39,7 @@ echo -e "$COLOR1┌────────────────────�
 echo -e "$COLOR1 ${NC}  Please choose another name."
 echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}" 
 echo -e "$COLOR1┌────────────────────── BY ───────────────────────┐${NC}"
-echo -e "$COLOR1 ${NC}                • Ghafoor Ali VPN-STORE •                 $COLOR1 $NC"
+echo -e "$COLOR1 ${NC}                • Ilyass Najhi VPN-STORE •                 $COLOR1 $NC"
 echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}"
 read -n 1 -s -r -p "   Press any key to back on menu"
 trojan-menu
@@ -56,9 +56,9 @@ systemctl restart xray
 trojanlink1="trojan://${uuid}@${domain}:${tr}?mode=gun&security=tls&type=grpc&serviceName=trojan-grpc&sni=bug.com#${user}"
 trojanlink="trojan://${uuid}@${domain}:${tr}?path=%2Ftrojan-ws&security=tls&host=bug.com&type=ws&sni=bug.com#${user}"
 cat > /home/vps/public_html/trojan-$user.txt <<-END
-=============================
-I N F O              A K U N
-=============================
+───────────────────────
+I N F O           A C C O U N T
+───────────────────────
 Remarks     : $user
 Expired On  : $exp
 Host/IP     : $domain 
@@ -70,15 +70,15 @@ Network     : WS or gRPC
 Path        : /trojan-ws
 Path WSS    : wss://hayosia/trojan-ws
 ServiceName : trojan-grpc
-=============================
+───────────────────────
 Link WS : $trojanlink
-=============================
+───────────────────────
 Link GRPC : $trojanlink1
-=============================
+───────────────────────
 END
 
 TRX="
-<code>INFO MASKU -Transaksi</code>
+<code>INFO Ilyass Najhi</code>
 <code>────────────────────</code>
 <b>  ⚠️TRANSAKSI TROJAN WS⚠️      </b>
 <code>────────────────────</code>
@@ -87,8 +87,8 @@ TRX="
 <code>🌟Durasi  : $exp</code>
 <code>🌟Server  : $domain</code>
 <code>────────────────────</code>
-<i>Notifikasi Via DeadrzBOT</i>
-<b>Tele : @ProjectDedi_bot</b>
+<i>Notifikasi Via ScriptMultiPort</i>
+<b>Tele : @IlyassExE</b>
 "
 TEXT="
 <code>──────────────────────────</code>
@@ -109,8 +109,8 @@ TEXT="
 http://${domain}:81/trojan-$user.txt
 <code>️📅 Expired On : $exp</code>
 <code>──────────────────────────</code>
-<i>Notifikasi Via DeadrzBOT</i>
-<b>Tele : @ProjectDedi_bot</b>
+<i>Notifikasi Via ScriptMultiPort</i>
+<b>Tele : @IlyassExE</b>
 "
 curl -s --max-time $TIMES -d "chat_id=$CHATID&disable_web_page_preview=1&text=$TEXT&parse_mode=html" $URL
 clear

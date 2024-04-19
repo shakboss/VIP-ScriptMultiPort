@@ -2,9 +2,9 @@
 ###########- BOT TELE ################
 AKUN="ACCOUNT VMESS"
 TIMES="10"
-CHATID="1948196603"
-CHATIDGC="-6919538834"
-KEY="6919538834:AAFtKiau19Qtn0PNNhY-PtpU4WGwD9FDpsM"
+CHATID="6582195916"
+CHATIDGC="-6582195916"
+KEY="6687728722:AAHXFek2SbUfSGF1eidm4VLF1bBMP3rZKUM"
 URL="https://api.telegram.org/bot$KEY/sendMessage"
 ##################### END BOT TELE ###############
 clear
@@ -19,13 +19,13 @@ none="$(cat ~/log-install.txt | grep -w "Vmess None TLS" | cut -d: -f2|sed 's/ /
 until [[ $user =~ ^[a-zA-Z0-9_]+$ && ${CLIENT_EXISTS} == '0' ]]; do
 
 read -rp "   Input Username : " -e user
-OWNER="WEBSSH"
+OWNER="ILYASS"
       
 if [ -z $user ]; then
 echo -e "$COLOR1 ${NC} [Error] Username cannot be empty "
 echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}" 
 echo -e "$COLOR1┌────────────────────── BY ───────────────────────┐${NC}"
-echo -e "$COLOR1 ${NC}                • Ghafoor Ali VPN-STORE •                 $COLOR1 $NC"
+echo -e "$COLOR1 ${NC}                • Ilyass Najhi VPN-STORE •                 $COLOR1 $NC"
 echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}"
 echo ""
 read -n 1 -s -r -p "   Press any key to back on menu"
@@ -42,7 +42,7 @@ echo -e "$COLOR1┌────────────────────�
 echo -e "$COLOR1 ${NC} Please choose another name."
 echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}" 
 echo -e "$COLOR1┌────────────────────── BY ───────────────────────┐${NC}"
-echo -e "$COLOR1 ${NC}                • Ghafoor Ali VPN-STORE •                 $COLOR1 $NC"
+echo -e "$COLOR1 ${NC}                • Ilyass Najhi VPN-STORE •                 $COLOR1 $NC"
 echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}"
 			read -n 1 -s -r -p "   Press any key to back on menu"
 menu
@@ -188,9 +188,9 @@ systemctl restart xray > /dev/null 2>&1
 service cron restart > /dev/null 2>&1
 
 cat > /home/vps/public_html/vmess-$user.txt <<-END
-=======================
+──────────────────
 INFO        SSH Account
-=======================
+──────────────────
 Remarks    : $user
 id         : $uuid
 Expired On : $exp
@@ -204,15 +204,15 @@ Security   : Auto
 Nerwork    : ws
 Path       : /vmess
 ServicName : vmess-grpc
-=======================
+──────────────────
 TLS : $vmesslink1
-=======================
+──────────────────
 None TLS : $vmesslink2
-=======================
+──────────────────
 GRPC : $vmesslink3
-=======================
+──────────────────
 Worryfree : $vmesslink4
-=======================
+──────────────────
 END
 TEXT="
 <code>────────────────────</code>
@@ -236,11 +236,11 @@ TEXT="
 http://${domain}:81/vmess-$user.txt
 <code>️📅 Expired On : $exp</code>
 <code>──────────────────────────</code>
-<i>Notifikasi Via DeadrzBOT</i>
-<b>Tele : @ProjectDedi_bot</b>
+<i>Notifikasi Via ScriptMultiPort</i>
+<b>Tele : @IlyassExE</b>
 "
 TRX="
-<code>INFO MASKU -Transaksi</code>
+<code>INFO ScriptMultiPort</code>
 <code>────────────────────</code>
 <b>  ⚠️TRANSAKSI   VMESS⚠️      </b>
 <code>────────────────────</code>
@@ -249,8 +249,8 @@ TRX="
 <code>🌟Expired : $exp</code>
 <code>🌟Server  : $domain</code>
 <code>────────────────────</code>
-<i>Notifikasi Via DeadrzBOT</i>
-<b>Tele : @ProjectDedi_bot</b>
+<i>Notifikasi Via ScriptMultiPort</i>
+<b>Tele : @IlyassExE</b>
 "
 curl -s --max-time $TIMES -d "chat_id=$CHATID&disable_web_page_preview=1&text=$TEXT&parse_mode=html" $URL
 clear
@@ -287,7 +287,7 @@ echo -e "$COLOR1 ${NC} Link Worry : " | tee -a /etc/log-create-user.log
 echo -e "$COLOR1 ${NC} ${vmesslink4}" | tee -a /etc/log-create-user.log
 echo -e "$COLOR1─────────────────────────────────────────────────${NC}"  | tee -a /etc/log-create-user.log
 echo -e "$COLOR1────────────────────── BY ───────────────────────${NC}" | tee -a /etc/log-create-user.log
-echo -e "$COLOR1 ${NC}                • Ghafoor Ali VPN-STORE •                 $COLOR1 $NC" | tee -a /etc/log-create-user.log
+echo -e "$COLOR1 ${NC}                • Ilyass Najhi VPN-STORE •                 $COLOR1 $NC" | tee -a /etc/log-create-user.log
 echo -e "$COLOR1─────────────────────────────────────────────────${NC}" | tee -a /etc/log-create-user.log
 echo "" | tee -a /etc/log-create-user.log
 

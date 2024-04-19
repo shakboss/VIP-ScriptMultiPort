@@ -2,8 +2,8 @@
 #install
 apt update && apt upgrade
 apt install python3 python3-pip git
-git clone https://github.com/ndhet/bot_panel.git
-unzip bot_panel/xolpanel.zip
+git clone https://github.com/FasterExE/BotPanel.git
+unzip BotPanel/xolpanel.zip
 pip3 install -r xolpanel/requirements.txt
 apt install zlib1g-dev libjpeg-dev libpng-dev
 pip3 install pillow
@@ -19,16 +19,16 @@ echo -e DOMAIN='"'$domain'"' >> /root/xolpanel/var.txt
 clear
 echo "Done"
 echo "Your Data Bot"
-echo -e "==============================="
+echo -e "─────────────────────────"
 echo "DOMAIN         : $bottoken"
 echo "Email          : $admin"
 echo "Api Key        : $domain"
-echo -e "==============================="
+echo -e "─────────────────────────"
 echo "Setting done"
 
 cat > /etc/systemd/system/xolpanel.service << END
 [Unit]
-Description=Simple XolPanel - @XolPanel
+Description=Simple BotPanel - @IlyassExE
 After=network.target
 
 [Service]

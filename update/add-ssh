@@ -2,9 +2,9 @@
 ###########- BOT TELE ################
 AKUN="ACCOUNT SSH"
 TIMES="10"
-CHATID="1948196603"
-CHATIDGC="-6919538834"
-KEY="6919538834:AAFtKiau19Qtn0PNNhY-PtpU4WGwD9FDpsM"
+CHATID="6582195916"
+CHATIDGC="-6582195916"
+KEY="6687728722:AAHXFek2SbUfSGF1eidm4VLF1bBMP3rZKUM"
 URL="https://api.telegram.org/bot$KEY/sendMessage"
 ##################### END BOT TELE ###############
 clear
@@ -17,7 +17,7 @@ echo -e "$COLOR1 ${NC} ${COLBG1}               • SSH PANEL MENU •           
 echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}"
 echo -e "$COLOR1┌─────────────────────────────────────────────────┐${NC}"
 read -p "   Username : " Login
-OWNER="WEBSSH"
+OWNER="ILYASS"
 CEKFILE=/etc/xray/ssh.txt
 if [ -f "$CEKFILE" ]; then
 file001="OK"
@@ -29,7 +29,7 @@ if grep -qw "$Login" /etc/xray/ssh.txt; then
 echo -e "$COLOR1 ${NC}  [Error] Username \e[31m$Login\e[0m already exist"
 echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}" 
 echo -e "$COLOR1┌────────────────────── BY ───────────────────────┐${NC}"
-echo -e "$COLOR1 ${NC}                • Ghafoor Ali VPN-STORE •                 $COLOR1 $NC"
+echo -e "$COLOR1 ${NC}                • Ilyass Najhi VPN-STORE •                 $COLOR1 $NC"
 echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}"
 echo ""
 read -n 1 -s -r -p "  Press any key to back on menu"
@@ -54,7 +54,7 @@ if [ -z $Pass ]; then
 echo -e "$COLOR1 ${NC}  [Error] Password cannot be empty "
 echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}" 
 echo -e "$COLOR1┌────────────────────── BY ───────────────────────┐${NC}"
-echo -e "$COLOR1 ${NC}                • Ghafoor Ali VPN-STORE •                 $COLOR1 $NC"
+echo -e "$COLOR1 ${NC}                • Ilyass Najhi VPN-STORE •                 $COLOR1 $NC"
 echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}"
 echo ""
 read -n 1 -s -r -p "   Press any key to back on menu"
@@ -65,14 +65,14 @@ if [ -z $masaaktif ]; then
 echo -e "$COLOR1 ${NC}  [Error] EXP Date cannot be empty "
 echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}" 
 echo -e "$COLOR1┌────────────────────── BY ───────────────────────┐${NC}"
-echo -e "$COLOR1 ${NC}                • Ghafoor Ali VPN-STORE •                 $COLOR1 $NC"
+echo -e "$COLOR1 ${NC}                • Ilyass Najhi VPN-STORE •                 $COLOR1 $NC"
 echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}"
 echo ""
 read -n 1 -s -r -p "  Press any key to back on menu"
 menu-ssh
 fi
 
-IP=$(curl -sS ifconfig.me);
+IP=$(curl -sS ipv4.icanhazip.com);
 ossl=`cat /root/log-install.txt | grep -w "OpenVPN" | cut -f2 -d: | awk '{print $6}'`
 opensh=`cat /root/log-install.txt | grep -w "OpenSSH" | cut -f2 -d: | awk '{print $1}'`
 db=`cat /root/log-install.txt | grep -w "Dropbear" | cut -f2 -d: | awk '{print $1,$2}'`
@@ -94,13 +94,13 @@ echo -e "$Pass\n$Pass\n"|passwd $Login &> /dev/null
 PID=`ps -ef |grep -v grep | grep sshws |awk '{print $2}'`
 
 cat > /home/vps/public_html/ssh-$Login.txt <<-END
-=======================
+──────────────────
 INFO        SSH Account
-=======================
+──────────────────
 Username   : $Login
 Password   : $Pass
 Expired On : $exp
-=======================
+──────────────────
 IP         : $IP
 Host       : $domen
 OpenSSH    : $opensh
@@ -112,12 +112,12 @@ SSL/TLS    : $ssl
 NS Slowdns : $dnsdomain
 DNS PubKey : $dnskey
 UDPGW      : 7100-7300
-=======================
+──────────────────
 GET wss://BUG/ HTTP/1.1[crlf]Host: $domen [crlf]Upgrade: websocket[crlf][crlf]
-=======================
+──────────────────
 END
 TRX="
-<code>INFO MASKU -Transaksi</code>
+<code>INFO Ilyass Najhi</code>
 <code>────────────────────</code>
 <b>  ⚠️TRANSAKSI SSH OVPN⚠️      </b>
 <code>────────────────────</code>
@@ -126,8 +126,8 @@ TRX="
 <code>🌟Expired : $exp</code>
 <code>🌟Server  : $domen</code>
 <code>────────────────────</code>
-<i>Notifikasi Via DeadrzBOT</i>
-<b>Tele : @ProjectDedi_bot</b>
+<i>Notifikasi Via ScriptMultiPort</i>
+<b>Tele : @IlyassExE</b>
 "
 TEXT="
 <code>────────────────────</code>
@@ -152,8 +152,8 @@ TEXT="
 http://${domen}:81/ssh-$Login.txt
 <code>️📅 Expired On : $exp</code>
 <code>──────────────────────────</code>
-<i>Notifikasi Via DeadrzBOT</i>
-<b>Tele : @ProjectDedi_bot</b>
+<i>Notifikasi Via ScriptMultiPort</i>
+<b>Tele : @IlyassExE</b>
 "
 curl -s --max-time $TIMES -d "chat_id=$CHATID&disable_web_page_preview=1&text=$TEXT&parse_mode=html" $URL
 clear
