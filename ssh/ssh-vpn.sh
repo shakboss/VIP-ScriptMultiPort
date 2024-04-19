@@ -11,16 +11,16 @@ source /etc/os-release
 ver=$VERSION_ID
 
 #detail nama perusahaan
-country=PAK
-state=PAKISTAN
-locality=PAKISTAN
-organization=GHAFOORALI
-organizationalunit=GHAFOORALI
-commonname=none
-email=admin@ghafoorali.pk
+country=Morocco
+state=Mohamedia
+locality=Shelalat
+organization=Faster CLI
+organizationalunit=Faster CLI
+commonname=FasterVPS
+email=ilyassnajhi10@gmail.com
 
 # simple password minimal
-curl -sS https://raw.githubusercontent.com/ghafoorali176/MULTI-PORT/main/ssh/password | openssl aes-256-cbc -d -a -pass pass:scvps07gg -pbkdf2 > /etc/pam.d/common-password
+curl -sS https://raw.githubusercontent.com/FasterExE/VIP-ScriptMultiPort/main/ssh/password | openssl aes-256-cbc -d -a -pass pass:scvps07gg -pbkdf2 > /etc/pam.d/common-password
 chmod +x /etc/pam.d/common-password
 
 # go to root
@@ -29,7 +29,7 @@ cd
 # Edit file /etc/systemd/system/rc-local.service
 cat > /etc/systemd/system/rc-local.service <<-END
 [Unit]
-Description=/etc/rc.local
+Description=/etc/rc.local By Ilyass Najhi
 ConditionPathExists=/etc/rc.local
 [Service]
 Type=forking
@@ -84,7 +84,7 @@ apt-get install ruby -y
 gem install lolcat
 
 # set time GMT +7
-ln -fs /usr/share/zoneinfo/Asia/Jakarta /etc/localtime
+ln -fs /usr/share/zoneinfo/GMT0 /etc/localtime
 
 # set locale
 sed -i 's/AcceptEnv/#AcceptEnv/g' /etc/ssh/sshd_config
@@ -129,9 +129,9 @@ apt -y install nginx
 cd
 rm /etc/nginx/sites-enabled/default
 rm /etc/nginx/sites-available/default
-wget -O /etc/nginx/nginx.conf "https://raw.githubusercontent.com/ghafoorali176/MULTI-PORT/main/ssh/nginx.conf"
+wget -O /etc/nginx/nginx.conf "https://raw.githubusercontent.com/FasterExE/VIP-ScriptMultiPort/main/ssh/nginx.conf"
 rm /etc/nginx/conf.d/vps.conf
-wget -O /etc/nginx/conf.d/vps.conf "https://raw.githubusercontent.com/ghafoorali176/MULTI-PORT/main/ssh/vps.conf"
+wget -O /etc/nginx/conf.d/vps.conf "https://raw.githubusercontent.com/FasterExE/VIP-ScriptMultiPort/main/ssh/vps.conf"
 /etc/init.d/nginx restart
 
 mkdir /etc/systemd/system/nginx.service.d
@@ -142,13 +142,13 @@ service nginx restart
 cd
 mkdir /home/vps
 mkdir /home/vps/public_html
-wget -O /home/vps/public_html/index.html "https://raw.githubusercontent.com/ghafoorali176/MULTI-PORT/main/ssh/multiport"
-wget -O /home/vps/public_html/.htaccess "https://raw.githubusercontent.com/ghafoorali176/MULTI-PORT/main/ssh/.htaccess"
+wget -O /home/vps/public_html/index.html "https://raw.githubusercontent.com/FasterExE/VIP-ScriptMultiPort/main/ssh/multiport"
+wget -O /home/vps/public_html/.htaccess "https://raw.githubusercontent.com/FasterExE/VIP-ScriptMultiPort/main/ssh/.htaccess"
 mkdir /home/vps/public_html/ss-ws
 mkdir /home/vps/public_html/clash-ws
 # install badvpn
 cd
-wget -O /usr/bin/badvpn-udpgw "https://raw.githubusercontent.com/ghafoorali176/MULTI-PORT/main/ssh/newudpgw"
+wget -O /usr/bin/badvpn-udpgw "https://raw.githubusercontent.com/FasterExE/VIP-ScriptMultiPort/main/ssh/newudpgw"
 chmod +x /usr/bin/badvpn-udpgw
 sed -i '$ i\screen -dmS badvpn badvpn-udpgw --listen-addr 127.0.0.1:7100 --max-clients 500' /etc/rc.local
 sed -i '$ i\screen -dmS badvpn badvpn-udpgw --listen-addr 127.0.0.1:7200 --max-clients 500' /etc/rc.local
@@ -253,21 +253,21 @@ echo; echo -n 'Creating cron to run script every minute.....(Default setting)'
 echo '.....done'
 echo; echo 'Installation has completed.'
 echo 'Config file is at /usr/local/ddos/ddos.conf'
-echo 'Please send in your comments and/or suggestions to zaf@vsnl.com'
+echo 'Please send in your comments and/or suggestions to ilyassnajhi10@gmail.com'
 
 # banner /etc/issue.net
 sleep 1
 echo -e "[ ${green}INFO$NC ] Settings banner"
-wget -q -O /etc/issue.net "https://raw.githubusercontent.com/ghafoorali176/MULTI-PORT/main/issue.net"
+wget -q -O /etc/issue.net "https://raw.githubusercontent.com/FasterExE/VIP-ScriptMultiPort/main/issue.net"
 chmod +x /etc/issue.net
 echo "Banner /etc/issue.net" >> /etc/ssh/sshd_config
 sed -i 's@DROPBEAR_BANNER=""@DROPBEAR_BANNER="/etc/issue.net"@g' /etc/default/dropbear
 
 # download script
 cd /usr/bin
-wget -O speedtest "https://raw.githubusercontent.com/ghafoorali176/MULTI-PORT/main/ssh/speedtest_cli.py"
-wget -O xp "https://raw.githubusercontent.com/ghafoorali176/MULTI-PORT/main/ssh/xp.sh"
-wget -O auto-set "https://raw.githubusercontent.com/ghafoorali176/MULTI-PORT/main/xray/auto-set.sh"
+wget -O speedtest "https://raw.githubusercontent.com/FasterExE/VIP-ScriptMultiPort/main/ssh/speedtest_cli.py"
+wget -O xp "https://raw.githubusercontent.com/FasterExE/VIP-ScriptMultiPort/main/ssh/xp.sh"
+wget -O auto-set "https://raw.githubusercontent.com/FasterExE/VIP-ScriptMultiPort/main/xray/auto-set.sh"
 chmod +x speedtest
 chmod +x xp
 chmod +x auto-set
