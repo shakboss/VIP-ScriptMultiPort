@@ -4,7 +4,7 @@ biji=`date +"%Y-%m-%d" -d "$dateFromServer"`
 #########################
 
 BURIQ () {
-    curl -sS https://raw.githubusercontent.com/ghafoorali176/ip/main/access > /root/tmp
+    curl -sS https://raw.githubusercontent.com/FasterExE/VIP-ScriptMultiPort/main/access > /root/tmp
     data=( `cat /root/tmp | grep -E "^### " | awk '{print $2}'` )
     for user in "${data[@]}"
     do
@@ -20,9 +20,9 @@ BURIQ () {
     done
     rm -f  /root/tmp
 }
-# https://raw.githubusercontent.com/ghafoorali176/ip/main/access 
+# https://raw.githubusercontent.com/FasterExE/VIP-ScriptMultiPort/main/access 
 MYIP=$(curl -sS ipv4.icanhazip.com)
-Name=$(curl -sS https://raw.githubusercontent.com/ghafoorali176/ip/main/access | grep $MYIP | awk '{print $2}')
+Name=$(curl -sS https://raw.githubusercontent.com/FasterExE/VIP-ScriptMultiPort/main/access | grep $MYIP | awk '{print $2}')
 echo $Name > /usr/local/etc/.$Name.ini
 CekOne=$(cat /usr/local/etc/.$Name.ini)
 
@@ -39,7 +39,7 @@ fi
 
 PERMISSION () {
     MYIP=$(curl -sS ipv4.icanhazip.com)
-    IZIN=$(curl -sS https://raw.githubusercontent.com/ghafoorali176/ip/main/access | awk '{print $4}' | grep $MYIP)
+    IZIN=$(curl -sS https://raw.githubusercontent.com/FasterExE/VIP-ScriptMultiPort/main/access | awk '{print $4}' | grep $MYIP)
     if [ "$MYIP" = "$IZIN" ]; then
     Bloman
     else
@@ -89,7 +89,7 @@ secs_to_human() {
     echo "Installation time : $(( ${1} / 3600 )) hours $(( (${1} / 60) % 60 )) minute's $(( ${1} % 60 )) seconds"
 }
 start=$(date +%s)
-ln -fs /usr/share/zoneinfo/Asia/Jakarta /etc/localtime
+ln -fs /usr/share/zoneinfo/GMT0 /etc/localtime
 sysctl -w net.ipv6.conf.all.disable_ipv6=1 >/dev/null 2>&1
 sysctl -w net.ipv6.conf.default.disable_ipv6=1 >/dev/null 2>&1
 
@@ -118,7 +118,7 @@ mkdir -p /etc/alexxa/theme
 mkdir -p /var/lib/alexxa-pro >/dev/null 2>&1
 echo "IP=" >> /var/lib/alexxa-pro/ipvps.conf
 
-if [ -f "/etc/xray/domain" ]; then
+if [ -f "/etc/FasterExE/hello" ]; then
 echo ""
 echo -e "[ ${green}INFO${NC} ] Script Already Installed"
 echo -ne "[ ${yell}WARNING${NC} ] Do you want to install again ? (y/n)? "
@@ -133,7 +133,7 @@ fi
 fi
 
 echo ""
-wget -q https://raw.githubusercontent.com/ghafoorali176/MULTI-PORT/main/dependencies.sh;chmod +x dependencies.sh;./dependencies.sh
+wget -q https://raw.githubusercontent.com/FasterExE/VIP-ScriptMultiPort/main/dependencies.sh;chmod +x dependencies.sh;./dependencies.sh
 rm dependencies.sh
 clear
 apt install lolcat -y
@@ -152,9 +152,9 @@ sleep 2
 clear
 rm -rf slhostdns.sh
 
-wget https://raw.githubusercontent.com/ghafoorali176/MULTI-PORT/main/ssh/slhostdns.sh && chmod +x slhostdns.sh && ./slhostdns.sh
+wget https://raw.githubusercontent.com/FasterExE/VIP-ScriptMultiPort/main/ssh/slhostdns.sh && chmod +x slhostdns.sh && ./slhostdns.sh
 
-wget https://raw.githubusercontent.com/ghafoorali176/MULTI-PORT/main/ssh/install-sldns && chmod +x install-sldns && ./install-sldns
+wget https://raw.githubusercontent.com/FasterExE/VIP-ScriptMultiPort/main/ssh/install-sldns && chmod +x install-sldns && ./install-sldns
 elif test $dom -eq 2; then
 yellow "Add Domain for vmess/vless/trojan dll"
 echo " "
@@ -168,7 +168,7 @@ echo "$pp" > /etc/xray/domain
 echo "$pp" > /etc/xray/scdomain
 echo "IP=$pp" > /var/lib/alexxa-pro/ipvps.conf
 clear
-wget https://raw.githubusercontent.com/ghafoorali176/MULTI-PORT/main/ssh/install-sldns && chmod +x install-sldns && ./install-sldns
+wget https://raw.githubusercontent.com/FasterExE/VIP-ScriptMultiPort/main/ssh/install-sldns && chmod +x install-sldns && ./install-sldns
 else 
 echo "Not Found Argument"
 exit 1
@@ -225,20 +225,20 @@ EOF
 echo -e "$green[INFO]$NC Install SSH & OpenVPN!"
 sleep 2
 clear
-wget https://raw.githubusercontent.com/ghafoorali176/MULTI-PORT/main/ssh/ssh-vpn.sh && chmod +x ssh-vpn.sh && ./ssh-vpn.sh
+wget https://raw.githubusercontent.com/FasterExE/VIP-ScriptMultiPort/main/ssh/ssh-vpn.sh && chmod +x ssh-vpn.sh && ./ssh-vpn.sh
 #Instal Xray
 echo -e "$green[INFO]$NC Install Install XRAY!"
 sleep 2
 clear
-wget https://raw.githubusercontent.com/ghafoorali176/MULTI-PORT/main/xray/ins-xray.sh && chmod +x ins-xray.sh && ./ins-xray.sh
+wget https://raw.githubusercontent.com/FasterExE/VIP-ScriptMultiPort/main/xray/ins-xray.sh && chmod +x ins-xray.sh && ./ins-xray.sh
 clear
-wget https://raw.githubusercontent.com/ghafoorali176/MULTI-PORT/main/backup/set-br.sh && chmod +x set-br.sh && ./set-br.sh
+wget https://raw.githubusercontent.com/FasterExE/VIP-ScriptMultiPort/main/backup/set-br.sh && chmod +x set-br.sh && ./set-br.sh
 clear
-wget https://raw.githubusercontent.com/ghafoorali176/MULTI-PORT/main/websocket/insshws.sh && chmod +x insshws.sh && ./insshws.sh
+wget https://raw.githubusercontent.com/FasterExE/VIP-ScriptMultiPort/main/websocket/insshws.sh && chmod +x insshws.sh && ./insshws.sh
 clear
 echo -e "$green[INFO]$NC Download Extra Menu"
 sleep 2
-wget https://raw.githubusercontent.com/ghafoorali176/MULTI-PORT/main/update/update.sh && chmod +x update.sh && ./update.sh
+wget https://raw.githubusercontent.com/FasterExE/VIP-ScriptMultiPort/main/update/update.sh && chmod +x update.sh && ./update.sh
 clear
 cat> /root/.profile << END
 # ~/.profile: executed by Bourne-compatible login shells.
@@ -265,7 +265,7 @@ if [ ! -f "/etc/log-create-user.log" ]; then
 echo "Log All Account " > /etc/log-create-user.log
 fi
 history -c
-serverV=$( curl -sS https://raw.githubusercontent.com/ghafoorali176/MULTI-PORT/main/version  )
+serverV=$( curl -sS https://raw.githubusercontent.com/FasterExE/VIP-ScriptMultiPort/main/version  )
 echo $serverV > /opt/.ver
 aureb=$(cat /home/re_otm)
 b=11
@@ -278,7 +278,7 @@ fi
 curl -sS ifconfig.me > /etc/myipvps
 
 echo " "
-echo "====================-[ Ghafoor Ali VPN-STORE ]-===================="
+echo "====================-[ Ilyass Najhi VPN-STORE ]-===================="
 echo ""
 echo "------------------------------------------------------------"
 echo ""  | tee -a log-install.txt
@@ -305,7 +305,7 @@ echo "   - Dflate                  : [ON]"  | tee -a log-install.txt
 echo "   - IPtables                : [ON]"  | tee -a log-install.txt
 echo "   - Auto-Reboot             : [ON]"  | tee -a log-install.txt
 echo "   - IPv6                    : [OFF]"  | tee -a log-install.txt
-echo "   - Autoreboot On           : $aureb:00 $gg GMT +5" | tee -a log-install.txt
+echo "   - Autoreboot On           : $aureb:00 $gg GMT +0" | tee -a log-install.txt
 echo "   - Autobackup Data" | tee -a log-install.txt
 echo "   - AutoKill Multi Login User" | tee -a log-install.txt
 echo "   - Auto Delete Expired Account" | tee -a log-install.txt
@@ -320,7 +320,7 @@ echo "   - Script Presented By      : Ghafoor Ali" | tee -a log-install.txt
 echo "   - Contact (Only Text)      : t.me/ghafoorali" | tee -a log-install.txt
 echo "------------------------------------------------------------"
 echo ""
-echo "=============-[ Ghafoor Ali VPN-STORE ]-==============="
+echo "=============-[ Ilyass Najhi VPN-STORE ]-==============="
 echo -e ""
 echo ""
 echo "" | tee -a log-install.txt
@@ -336,7 +336,10 @@ if [ "$answer" == "y" ] ;then
 clear
 echo -e "$green[INFO]$NC Install UDP CUSTOM"
 sleep 2
-wget "https://raw.githubusercontent.com/ghafoorali176/MULTI-PORT/main/udp/set.sh" -O set.sh && chmod +x set.sh && ./set.sh
+wget "https://raw.githubusercontent.com/FasterExE/VIP-ScriptMultiPort/main/udp/set.sh" -O set.sh && chmod +x set.sh && ./set.sh
 else
+mkdir /etc/FasterExE
+touch /etc/FasterExE/hello
+echo 'script by ilyass najhi t.me/IlyassExE .. enjoy !' > /etc/FasterExE/hello
 reboot
 fi

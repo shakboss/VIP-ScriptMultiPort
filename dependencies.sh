@@ -29,6 +29,7 @@ apt dist-upgrade -y
 apt install sudo -y
 apt-get remove --purge ufw firewalld -y 
 apt-get remove --purge exim4 -y 
+apt install curl -y
 
 
 apt install -y screen curl jq bzip2 gzip coreutils rsyslog iftop \
