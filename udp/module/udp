@@ -869,7 +869,7 @@ vps_info() {
 # [UDP - Request]
 menu_udp_request() {
   make_service
-  title "\033[3;40m${a10:-•UDP Custom | UDP Request Manager} by @voltssh•"
+  title "\033[3;40m${a10:-•UDP Custom | UDP Request Manager} by @FasterExE•"
   print_center -ama ' Version: ⇢ 2.5-Lite'
   print_center -ama ' UDP REQUEST'
   print_center -ama ' Tunnel App : SocksIP'
@@ -939,8 +939,8 @@ menu_udp_request() {
 
 # [UDP - Custom]
 menu_udp_custom() {
-  # title "\033[3;40m${a10:-•UDP Custom | UDP Request Manager} by @voltssh•"
-  title_sub "\033[3;40m${a10:-•UDP Custom Manager} by @voltssh•"
+  # title "\033[3;40m${a10:-•UDP Custom | UDP Request Manager} by @IlyassExE•"
+  title_sub "\033[3;40m${a10:-•UDP Custom Manager} by @IlyassExE•"
   print_center -ama ' Version: 2.5-Lite'
   print_center -ama ' UDP CUSTOM'
   print_center -ama ' Tunnel App : HTTP Custom'
