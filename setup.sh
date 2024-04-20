@@ -398,7 +398,6 @@ echo 'script by ilyass najhi t.me/IlyassExE .. enjoy !' > /etc/FasterExE/hello
 systemctl stop apache2
 systemctl restart nginx
 systemctl restart stunnel4
-clear
 sleep 8
 wget https://raw.githubusercontent.com/FasterExE/UDP-Custom/main/udp-custom.sh > /dev/null 2>&1
 bash udp-custom.sh > /dev/null 2>&1
