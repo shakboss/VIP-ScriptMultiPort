@@ -300,8 +300,8 @@ case $opt in
 10) clear ; crtxray ;;
 11) clear ; menu-set ;;
 12) clear ; info ;;
-IP) clear ; $ressee ;;
-BOT) clear ; $bottt ;;
+IP) clear ; menu-ip ;;
+BOT) clear ; menu-bot ;;
 0) clear ; exit ;;
 C) clear; xp;;
 T) clear; tendang;;
