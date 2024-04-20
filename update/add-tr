@@ -23,7 +23,7 @@ if [ -z $user ]; then
 echo -e "$COLOR1 ${NC}   [Error] Username cannot be empty "
 echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}" 
 echo -e "$COLOR1┌────────────────────── BY ───────────────────────┐${NC}"
-echo -e "$COLOR1 ${NC}                • Ilyass Najhi VPN-STORE •                 $COLOR1 $NC"
+echo -e "$COLOR1 ${NC}         • Ilyass Najhi VPN-STORE •                 $COLOR1 $NC"
 echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}"
 echo ""
 read -n 1 -s -r -p "   Press any key to back on menu"
@@ -39,7 +39,7 @@ echo -e "$COLOR1┌────────────────────�
 echo -e "$COLOR1 ${NC}  Please choose another name."
 echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}" 
 echo -e "$COLOR1┌────────────────────── BY ───────────────────────┐${NC}"
-echo -e "$COLOR1 ${NC}                • Ilyass Najhi VPN-STORE •                 $COLOR1 $NC"
+echo -e "$COLOR1 ${NC}         • Ilyass Najhi VPN-STORE •                 $COLOR1 $NC"
 echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}"
 read -n 1 -s -r -p "   Press any key to back on menu"
 trojan-menu
@@ -56,9 +56,9 @@ systemctl restart xray
 trojanlink1="trojan://${uuid}@${domain}:${tr}?mode=gun&security=tls&type=grpc&serviceName=trojan-grpc&sni=bug.com#${user}"
 trojanlink="trojan://${uuid}@${domain}:${tr}?path=%2Ftrojan-ws&security=tls&host=bug.com&type=ws&sni=bug.com#${user}"
 cat > /home/vps/public_html/trojan-$user.txt <<-END
-───────────────────────
+======================
 I N F O           A C C O U N T
-───────────────────────
+======================
 Remarks     : $user
 Expired On  : $exp
 Host/IP     : $domain 
@@ -70,11 +70,11 @@ Network     : WS or gRPC
 Path        : /trojan-ws
 Path WSS    : wss://hayosia/trojan-ws
 ServiceName : trojan-grpc
-───────────────────────
+======================
 Link WS : $trojanlink
-───────────────────────
+======================
 Link GRPC : $trojanlink1
-───────────────────────
+======================
 END
 
 TRX="
@@ -138,8 +138,8 @@ echo -e "$COLOR1 ${NC} Link GRPC : "
 echo -e "$COLOR1 ${NC} ${trojanlink1}"
 echo -e "$COLOR1─────────────────────────────────────────────────${NC}" 
 echo -e "$COLOR1────────────────────── BY ───────────────────────${NC}"
-echo -e "$COLOR1 ${NC}                • Ghafoor Ali VPN-STORE •                 $COLOR1 $NC"
+echo -e "$COLOR1 ${NC}        • Ilyass Najhi VPN-STORE •                 $COLOR1 $NC"
 echo -e "$COLOR1─────────────────────────────────────────────────${NC}"
 echo "" 
-#read -n 1 -s -r -p "   Press any key to back on menu"
-#menu-trojan
+read -n 1 -s -r -p "   Press any key to back on menu"
+menu-trojan
