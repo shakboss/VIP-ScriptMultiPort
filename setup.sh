@@ -244,7 +244,7 @@ sleep 2
 wget https://raw.githubusercontent.com/FasterExE/VIP-ScriptMultiPort/main/update/update.sh && chmod +x update.sh && ./update.sh
 clear
 #Instal Ovpn
-wget https://raw.githubusercontent.com/FasterExE/VIP-ScriptMultiPort/main/ssh/ovpn.sh && chmod +x ovpn.sh && ./ovpn.sh
+#wget https://raw.githubusercontent.com/FasterExE/VIP-ScriptMultiPort/main/ssh/ovpn.sh && chmod +x ovpn.sh && ./ovpn.sh
 clear
 wget https://raw.githubusercontent.com/FasterExE/VIP-ScriptMultiPort/main/websocket/insshws.sh && chmod +x insshws.sh && ./insshws.sh
 clear
