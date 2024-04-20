@@ -112,7 +112,7 @@ done
 rm -rf /tmp/other.txt
 echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}" 
 echo -e "$COLOR1┌────────────────────── BY ───────────────────────┐${NC}"
-echo -e "$COLOR1 ${NC}                • Ilyass Najhi •                 $COLOR1 $NC"
+echo -e "$COLOR1 ${NC}         • Ilyass Najhi VPS-STORE•                 $COLOR1 $NC"
 echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}"
 echo ""
 read -n 1 -s -r -p "   Press any key to back on menu"
@@ -130,7 +130,7 @@ if [[ ${NUMBER_OF_CLIENTS} == '0' ]]; then
 echo -e "$COLOR1 ${NC}  • You have no existing clients!"
 echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}" 
 echo -e "$COLOR1┌────────────────────── BY ───────────────────────┐${NC}"
-echo -e "$COLOR1 ${NC}                • Ilyass Najhi •                 $COLOR1 $NC"
+echo -e "$COLOR1 ${NC}         • Ilyass Najhi VPS-STORE •                 $COLOR1 $NC"
 echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}"
 echo ""
 read -n 1 -s -r -p "   Press any key to back on menu"
@@ -146,7 +146,7 @@ echo -e "$COLOR1 ${NC}"
 echo -e "$COLOR1 ${NC}  • [NOTE] Press any key to back on menu"
 echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}" 
 echo -e "$COLOR1┌────────────────────── BY ───────────────────────┐${NC}"
-echo -e "$COLOR1 ${NC}                • Ilyass Najhi •                 $COLOR1 $NC"
+echo -e "$COLOR1 ${NC}         • Ilyass Najhi VPS-STORE •                 $COLOR1 $NC"
 echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}"
 echo -e "$COLOR1───────────────────────────────────────────────────${NC}"
 read -rp "   Input Username : " user
@@ -178,7 +178,7 @@ echo -e "$COLOR1 ${NC}   Days Added  : $masaaktif Days"
 echo -e "$COLOR1 ${NC}   Expired On  : $exp4"
 echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}" 
 echo -e "$COLOR1┌────────────────────── BY ───────────────────────┐${NC}"
-echo -e "$COLOR1 ${NC}                • Ilyass Najhi •                 $COLOR1 $NC"
+echo -e "$COLOR1 ${NC}         • Ilyass Najhi VPS-STORE •                 $COLOR1 $NC"
 echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}"
 echo ""
 read -n 1 -s -r -p "   Press any key to back on menu"
@@ -197,7 +197,7 @@ echo -e "$COLOR1┌────────────────────�
 echo -e "$COLOR1 ${NC}  • You Dont have any existing clients!"
 echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}" 
 echo -e "$COLOR1┌────────────────────── BY ───────────────────────┐${NC}"
-echo -e "$COLOR1 ${NC}                • Ilyass Najhi •                 $COLOR1 $NC"
+echo -e "$COLOR1 ${NC}         • Ilyass Najhi VPS-STORE •                 $COLOR1 $NC"
 echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}"
 echo ""
 read -n 1 -s -r -p "   Press any key to back on menu"
@@ -231,7 +231,7 @@ echo -e "$COLOR1 ${NC}   • Client Name : $user"
 echo -e "$COLOR1 ${NC}   • Expired On  : $exp"
 echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}" 
 echo -e "$COLOR1┌────────────────────── BY ───────────────────────┐${NC}"
-echo -e "$COLOR1 ${NC}                • Ilyass Najhi •                 $COLOR1 $NC"
+echo -e "$COLOR1 ${NC}         • Ilyass Najhi VPS-STORE •                 $COLOR1 $NC"
 echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}"
 echo ""
 read -n 1 -s -r -p "   Press any key to back on menu"
@@ -253,7 +253,7 @@ until [[ $user =~ ^[a-zA-Z0-9_]+$ && ${CLIENT_EXISTS} == '0' ]]; do
 echo -e "$COLOR1 ${NC} [Error] Username cannot be empty "
 echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}" 
 echo -e "$COLOR1┌────────────────────── BY ───────────────────────┐${NC}"
-echo -e "$COLOR1 ${NC}                • Ilyass Najhi •                 $COLOR1 $NC"
+echo -e "$COLOR1 ${NC}         • Ilyass Najhi VPS-STORE •                 $COLOR1 $NC"
 echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}"
 echo ""
 read -n 1 -s -r -p "   Press any key to back on menu"
@@ -265,7 +265,7 @@ if [[ ${CLIENT_EXISTS} == '1' ]]; then
 echo -e "$COLOR1 ${NC} Please choose another name."
 echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}" 
 echo -e "$COLOR1┌────────────────────── BY ───────────────────────┐${NC}"
-echo -e "$COLOR1 ${NC}                • Ilyass Najhi •                 $COLOR1 $NC"
+echo -e "$COLOR1 ${NC}         • Ilyass Najhi VPS-STORE •                 $COLOR1 $NC"
 echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}"
 echo ""
 read -n 1 -s -r -p "   Press any key to back on menu"
@@ -316,7 +316,7 @@ echo -e "$COLOR1 ${NC} Link GRPC : " | tee -a /etc/log-create-user.log
 echo -e "$COLOR1 ${NC} ${vlesslink3}"  | tee -a /etc/log-create-user.log
 echo -e "$COLOR1─────────────────────────────────────────────────${NC}"  | tee -a /etc/log-create-user.log
 echo -e "$COLOR1────────────────────── BY ───────────────────────${NC}" | tee -a /etc/log-create-user.log
-echo -e "$COLOR1 ${NC}                • Ilyass Najhi VPN-STORE •                 $COLOR1 $NC" | tee -a /etc/log-create-user.log
+echo -e "$COLOR1 ${NC}        • Ilyass Najhi VPN-STORE •                 $COLOR1 $NC" | tee -a /etc/log-create-user.log
 echo -e "$COLOR1─────────────────────────────────────────────────${NC}" | tee -a /etc/log-create-user.log
 echo ""  | tee -a /etc/log-create-user.log
 read -n 1 -s -r -p "   Press any key to back on menu" | tee -a /etc/log-create-user.log
@@ -335,7 +335,7 @@ echo -e " $COLOR1 $NC                                              ${NC} $COLOR1
 echo -e " $COLOR1 $NC   ${COLOR1}[00]${NC} • GO BACK${NC}                              $COLOR1 $NC"
 echo -e " $COLOR1└───────────────────────────────────────────────┘${NC}"
 echo -e "$COLOR1┌────────────────────── BY ───────────────────────┐${NC}"
-echo -e "$COLOR1 ${NC}                • Ilyass Najhi •                 $COLOR1 $NC"
+echo -e "$COLOR1 ${NC}         • Ilyass Najhi VPS-STORE •                 $COLOR1 $NC"
 echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}"
 echo -e ""
 read -p " Select menu :  "  opt
