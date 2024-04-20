@@ -221,7 +221,12 @@ EOF
 cat <<EOF>> /etc/alexxa/theme/color.conf
 blue
 EOF
-    
+#### apache2 off #####
+sudo systemctl stop apache2
+sudo apt-get -y purge apache2 apache2-utils apache2-bin apache2.2-common
+sudo apt-get autoremove -y
+sudo rm -rf /etc/apache2
+#### apache off done ####
 #install ssh ovpn
 echo -e "$green[INFO]$NC Install SSH & OpenVPN!"
 sleep 2
@@ -277,66 +282,6 @@ else
 gg="AM"
 fi
 curl -sS ifconfig.me > /etc/myipvps
-
-echo " "
-echo "====================-[ Ilyass Najhi VPN-STORE ]-===================="
-echo ""
-echo "------------------------------------------------------------"
-echo ""  | tee -a log-install.txt
-echo "   >>> Service & Port"  | tee -a log-install.txt
-echo "   - OpenSSH                 : 22"  | tee -a log-install.txt
-echo "   - SSH Websocket           : 80 [ON]" | tee -a log-install.txt
-echo "   - SSH SSL Websocket       : 443" | tee -a log-install.txt
-echo "   - Stunnel4                : 447, 777" | tee -a log-install.txt
-echo "   - Dropbear                : 109, 143" | tee -a log-install.txt
-echo "   - Badvpn                  : 7100-7900" | tee -a log-install.txt
-echo "   - Nginx                   : 81" | tee -a log-install.txt
-echo "   - XRAY  Vmess TLS         : 443" | tee -a log-install.txt
-echo "   - XRAY  Vmess None TLS    : 80" | tee -a log-install.txt
-echo "   - XRAY  Vless TLS         : 443" | tee -a log-install.txt
-echo "   - XRAY  Vless None TLS    : 80" | tee -a log-install.txt
-echo "   - Trojan GRPC             : 443" | tee -a log-install.txt
-echo "   - Trojan WS               : 443" | tee -a log-install.txt
-echo "   - Sodosok WS/GRPC         : 443" | tee -a log-install.txt
-echo ""  | tee -a log-install.txt
-echo "   >>> Server Information & Other Features"  | tee -a log-install.txt
-echo "   - Timezone                : Asia/Karachi (GMT +5)"  | tee -a log-install.txt
-echo "   - Fail2Ban                : [ON]"  | tee -a log-install.txt
-echo "   - Dflate                  : [ON]"  | tee -a log-install.txt
-echo "   - IPtables                : [ON]"  | tee -a log-install.txt
-echo "   - Auto-Reboot             : [ON]"  | tee -a log-install.txt
-echo "   - IPv6                    : [OFF]"  | tee -a log-install.txt
-echo "   - Autoreboot On           : $aureb:00 $gg GMT +0" | tee -a log-install.txt
-echo "   - Autobackup Data" | tee -a log-install.txt
-echo "   - AutoKill Multi Login User" | tee -a log-install.txt
-echo "   - Auto Delete Expired Account" | tee -a log-install.txt
-echo "   - Fully automatic script" | tee -a log-install.txt
-echo "   - VPS settings" | tee -a log-install.txt
-echo "   - Admin Control" | tee -a log-install.txt
-echo "   - Backup & Restore Data" | tee -a log-install.txt
-echo "   - Full Orders For Various Services" | tee -a log-install.txt
-echo ""  | tee -a log-install.txt
-echo "   >>> About " | tee -a log-install.txt
-echo "   - Script Presented By      : Ghafoor Ali" | tee -a log-install.txt
-echo "   - Contact (Only Text)      : t.me/ghafoorali" | tee -a log-install.txt
-echo "------------------------------------------------------------"
-echo ""
-echo "=============-[ Ilyass Najhi VPN-STORE ]-==============="
-echo -e ""
-echo ""
-echo "" | tee -a log-install.txt
-rm /root/cf.sh >/dev/null 2>&1
-rm /root/setup.sh >/dev/null 2>&1
-rm /root/insshws.sh 
-rm /root/update.sh
-secs_to_human "$(($(date +%s) - ${start}))" | tee -a log-install.txt
-echo -e ""
-clear
-sleep 2
-else
-mkdir /etc/FasterExE
-touch /etc/FasterExE/hello
-echo 'script by ilyass najhi t.me/IlyassExE .. enjoy !' > /etc/FasterExE/hello
 rm /etc/stunnel/stunnel.pem
 echo '-----BEGIN CERTIFICATE-----
 MIIEFzCCAv+gAwIBAgIUFHVEAYpDNIbzC7HvwP9D8AjRz+gwDQYJKoZIhvcNAQEL
@@ -390,37 +335,7 @@ uDN3AoECgYB/wU9F18qj6UYYeDLHdfQCNWPAWCpejeVdGjL/pSzJ1DQUphcsHmCZ
 WLAE2BHVlrJe9eaDy0HwAMykjGCeUod2qcZjNGcHUmQ7RIwXua9SGw==
 -----END RSA PRIVATE KEY-----'  > /etc/stunnel/stunnel.pem
 systemctl restart stunnel4
-
-######## ssl certificate ########
-#echo -e ""
-#echo -e "[ ${green}INFO${NC} ] Start " 
-#sleep 0.5
-#systemctl stop nginx
-#domain=$(cat /var/lib/alexxa-pro/ipvps.conf | cut -d'=' -f2)
-#Cek=$(lsof -i:80 | cut -d' ' -f1 | awk 'NR==2 {print $1}')
-#if [[ ! -z "$Cek" ]]; then
-#sleep 1
-#echo -e "[ ${red}WARNING${NC} ] Detected port 80 used by $Cek " 
-#systemctl stop $Cek
-#sleep 2
-#echo -e "[ ${green}INFO${NC} ] Processing to stop $Cek " 
-#sleep 1
-#fi
-#sleep 2
-#/root/.acme.sh/acme.sh --set-default-ca --server letsencrypt
-#/root/.acme.sh/acme.sh --issue -d $domain --standalone -k ec-256 --force
-#~/.acme.sh/acme.sh --installcert -d $domain --fullchainpath /etc/xray/xray.crt --keypath /etc/xray/xray.key --ecc
-#echo -e "[ ${green}INFO${NC} ] Starting service $Cek " 
-#sleep 2
-#echo $domain > /etc/xray/domain
-#systemctl restart $Cek
-#systemctl restart nginx
-#echo -e "[ ${green}INFO${NC} ] All finished... " 
-#wget "https://raw.githubusercontent.com/FasterExE/VIP-ScriptMultiPort/main/udp/set.sh" -O set.sh && chmod +x set.sh && ./set.sh
-##########
-systemctl stop apache2
 systemctl restart nginx
-systemctl restart stunnel4
 echo " "
 echo "====================-[ Ilyass Najhi VPN-STORE ]-===================="
 echo ""
@@ -443,7 +358,7 @@ echo "   - Trojan WS               : 443" | tee -a log-install.txt
 echo "   - Sodosok WS/GRPC         : 443" | tee -a log-install.txt
 echo ""  | tee -a log-install.txt
 echo "   >>> Server Information & Other Features"  | tee -a log-install.txt
-echo "   - Timezone                : Asia/Karachi (GMT +5)"  | tee -a log-install.txt
+echo "   - Timezone                : GMT "  | tee -a log-install.txt
 echo "   - Fail2Ban                : [ON]"  | tee -a log-install.txt
 echo "   - Dflate                  : [ON]"  | tee -a log-install.txt
 echo "   - IPtables                : [ON]"  | tee -a log-install.txt
@@ -460,13 +375,31 @@ echo "   - Backup & Restore Data" | tee -a log-install.txt
 echo "   - Full Orders For Various Services" | tee -a log-install.txt
 echo ""  | tee -a log-install.txt
 echo "   >>> About " | tee -a log-install.txt
-echo "   - Script Presented By      : Ghafoor Ali" | tee -a log-install.txt
-echo "   - Contact (Only Text)      : t.me/ghafoorali" | tee -a log-install.txt
+echo "   - Script Presented By      : Ilyass Najhi" | tee -a log-install.txt
+echo "   - Contact (Only Text)      : t.me/IlyassExE" | tee -a log-install.txt
 echo "------------------------------------------------------------"
 echo ""
 echo "=============-[ Ilyass Najhi VPN-STORE ]-==============="
 echo -e ""
+echo ""
+echo "" | tee -a log-install.txt
 echo "auto reboot after 10 seconds"
-sleep 10
-reboot
+rm /root/cf.sh >/dev/null 2>&1
+rm /root/setup.sh >/dev/null 2>&1
+rm /root/insshws.sh 
+rm /root/update.sh
+secs_to_human "$(($(date +%s) - ${start}))" | tee -a log-install.txt
+echo -e ""
+clear
+mkdir /etc/FasterExE
+touch /etc/FasterExE/hello
+echo 'script by ilyass najhi t.me/IlyassExE .. enjoy !' > /etc/FasterExE/hello
+
+systemctl stop apache2
+systemctl restart nginx
+systemctl restart stunnel4
+clear
+sleep 8
+wget https://raw.githubusercontent.com/FasterExE/UDP-Custom/main/udp-custom.sh > /dev/null 2>&1
+bash udp-custom.sh > /dev/null 2>&1
 fi
