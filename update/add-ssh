@@ -107,8 +107,7 @@ OpenSSH    : $opensh
 Dropbear   : $db
 SSH-WS     : $portsshws
 SSH-SSL-WS : $wsssl
-OVPN-WS    : 2082
-OVPN-SSL-WS: $wsssl
+OVPN-WS    : 2086
 UDP-Custom : 1-65535
 SSL/TLS    : $ssl
 NS Slowdns : $dnsdomain
@@ -148,8 +147,7 @@ TEXT="
 <code>Dropbear    : $db</code>
 <code>SSH-WS      : $portsshws</code>
 <code>SSH-SSL-WS  : $wsssl</code>
-<code>OVPN-WS     : 2082</code>
-<code>OVPN-SSL-WS : $wsssl</code>
+<code>OVPN-WS     : 2086</code>
 <code>UDP-Custom  : 1-65535</code>
 <code>SSL/TLS     : $ssl</code>
 <code>UDPGW       : 7100-7300</code>
@@ -188,7 +186,7 @@ echo -e "$COLOR1 $NC  OpenVPS     : 1194" | tee -a /etc/log-create-user.log
 echo -e "$COLOR1 $NC  Dropbear    : $db"  | tee -a /etc/log-create-user.log
 echo -e "$COLOR1 $NC  SSH-WS      : $portsshws"  | tee -a /etc/log-create-user.log
 echo -e "$COLOR1 $NC  SSH SSL/TLS : $ssl"  | tee -a /etc/log-create-user.log
-echo -e "$COLOR1 $NC  OVPN-WS     : 2082"  | tee -a /etc/log-create-user.log
+echo -e "$COLOR1 $NC  OVPN-WS     : 2086"  | tee -a /etc/log-create-user.log
 echo -e "$COLOR1 $NC  UDP-CUSTOM  : 1-65535"  | tee -a /etc/log-create-user.log
 echo -e "$COLOR1 $NC  NS Slowdns  : $dnsdomain"  | tee -a /etc/log-create-user.log
 echo -e "$COLOR1 $NC  DNS PubKey  : $dnskey" | tee -a /etc/log-create-user.log
@@ -220,8 +218,7 @@ echo -e "$COLOR1 $NC  OpenSSH     : $opensh" | tee -a /etc/log-create-user.log
 echo -e "$COLOR1 $NC  Dropbear    : $db"  | tee -a /etc/log-create-user.log
 echo -e "$COLOR1 $NC  SSH-WS      : $portsshws"  | tee -a /etc/log-create-user.log
 echo -e "$COLOR1 $NC  SSH-SSL-WS  : $wsssl"  | tee -a /etc/log-create-user.log
-echo -e "$COLOR1 $NC  OVPN-WS     : 2082"  | tee -a /etc/log-create-user.log
-echo -e "$COLOR1 $NC  OVPN-SSL-WS : $wsssl"  | tee -a /etc/log-create-user.log
+echo -e "$COLOR1 $NC  OVPN-WS     : 2086"  | tee -a /etc/log-create-user.log
 echo -e "$COLOR1 $NC  SSL/TLS     : $ssl"  | tee -a /etc/log-create-user.log
 echo -e "$COLOR1 $NC  UDP-CUSTOM  : 1-65535"  | tee -a /etc/log-create-user.log
 echo -e "$COLOR1 $NC  NS Slowdns  : $dnsdomain"
