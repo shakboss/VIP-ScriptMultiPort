@@ -231,7 +231,8 @@ sudo rm -rf /etc/apache2
 echo -e "$green[INFO]$NC Install SSH & OpenVPN!"
 sleep 2
 clear
-wget https://raw.githubusercontent.com/FasterExE/VIP-ScriptMultiPort/main/ssh/ssh-vpn.sh && chmod +x ssh-vpn.sh && ./ssh-vpn.sh
+#Instal Ovpn
+wget https://raw.githubusercontent.com/FasterExE/VIP-ScriptMultiPort/main/ssh/ovpn.sh && chmod +x ovpn.sh && ./ovpn.sh
 #Instal Xray
 echo -e "$green[INFO]$NC Install Install XRAY!"
 sleep 2
