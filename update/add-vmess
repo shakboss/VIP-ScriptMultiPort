@@ -25,7 +25,7 @@ if [ -z $user ]; then
 echo -e "$COLOR1 ${NC} [Error] Username cannot be empty "
 echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}" 
 echo -e "$COLOR1┌────────────────────── BY ───────────────────────┐${NC}"
-echo -e "$COLOR1 ${NC}                • Ilyass Najhi VPN-STORE •                 $COLOR1 $NC"
+echo -e "$COLOR1 ${NC}         • Ilyass Najhi VPN-STORE •                 $COLOR1 $NC"
 echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}"
 echo ""
 read -n 1 -s -r -p "   Press any key to back on menu"
@@ -42,7 +42,7 @@ echo -e "$COLOR1┌────────────────────�
 echo -e "$COLOR1 ${NC} Please choose another name."
 echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}" 
 echo -e "$COLOR1┌────────────────────── BY ───────────────────────┐${NC}"
-echo -e "$COLOR1 ${NC}                • Ilyass Najhi VPN-STORE •                 $COLOR1 $NC"
+echo -e "$COLOR1 ${NC}         • Ilyass Najhi VPN-STORE •                 $COLOR1 $NC"
 echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}"
 			read -n 1 -s -r -p "   Press any key to back on menu"
 menu
@@ -188,9 +188,9 @@ systemctl restart xray > /dev/null 2>&1
 service cron restart > /dev/null 2>&1
 
 cat > /home/vps/public_html/vmess-$user.txt <<-END
-──────────────────
+======================
 INFO        SSH Account
-──────────────────
+======================
 Remarks    : $user
 id         : $uuid
 Expired On : $exp
@@ -204,15 +204,15 @@ Security   : Auto
 Nerwork    : ws
 Path       : /vmess
 ServicName : vmess-grpc
-──────────────────
+======================
 TLS : $vmesslink1
-──────────────────
+======================
 None TLS : $vmesslink2
-──────────────────
+======================
 GRPC : $vmesslink3
-──────────────────
+======================
 Worryfree : $vmesslink4
-──────────────────
+======================
 END
 TEXT="
 <code>────────────────────</code>
@@ -287,9 +287,9 @@ echo -e "$COLOR1 ${NC} Link Worry : " | tee -a /etc/log-create-user.log
 echo -e "$COLOR1 ${NC} ${vmesslink4}" | tee -a /etc/log-create-user.log
 echo -e "$COLOR1─────────────────────────────────────────────────${NC}"  | tee -a /etc/log-create-user.log
 echo -e "$COLOR1────────────────────── BY ───────────────────────${NC}" | tee -a /etc/log-create-user.log
-echo -e "$COLOR1 ${NC}                • Ilyass Najhi VPN-STORE •                 $COLOR1 $NC" | tee -a /etc/log-create-user.log
+echo -e "$COLOR1 ${NC}        • Ilyass Najhi VPN-STORE •                 $COLOR1 $NC" | tee -a /etc/log-create-user.log
 echo -e "$COLOR1─────────────────────────────────────────────────${NC}" | tee -a /etc/log-create-user.log
 echo "" | tee -a /etc/log-create-user.log
 
-#read -n 1 -s -r -p "   Press any key to back on menu" | tee -a /etc/log-create-user.log
-#menu-vmess
+read -n 1 -s -r -p "   Press any key to back on menu" | tee -a /etc/log-create-user.log
+menu-vmess
