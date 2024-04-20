@@ -12,10 +12,7 @@ export COLBG1="$(cat /etc/alexxa/theme/$colornow | grep -w "BG" | cut -d: -f2|se
 tram=$( free -h | awk 'NR==2 {print $2}' )
 uram=$( free -h | awk 'NR==2 {print $3}' )
 MYip=$(curl -sS ipv4.icanhazip.com)
-#ISP=$(curl -s ipinfo.io/org | cut -d " " -f 2-10 )
-ISP=$(curl -s https://ipapi.co/$MYip/org)
-#CITY=$(curl -s ipinfo.io/city )
-CITY=$(curl -s https://ipapi.co/$MYip/city)
+alias ISCT='curl -s ipinfo.io | jq -r '"'"'"\(.org) | \(.city)"'"'"''
 
 BURIQ () {
     curl -sS https://raw.githubusercontent.com/FasterExE/VIP-ScriptMultiPort/main/access > /root/tmp
@@ -218,7 +215,7 @@ else
 echo -e "$COLOR1 $NC System Uptime  : $uphours $upminutes"
 fi
 echo -e "$COLOR1 $NC Memory Usage   : $uram / $tram"
-echo -e "$COLOR1 $NC ISP & City     : $ISP & $CITY"
+echo -e "$COLOR1 $NC ISP & City     : ISCT"
 echo -e "$COLOR1 $NC Current Domain : $(cat /etc/xray/domain)"
 echo -e "$COLOR1 $NC Flare Domain   : $(cat /etc/xray/cfdomain)"
 echo -e "$COLOR1 $NC NS Domain      : $(cat /root/nsdomain)"
