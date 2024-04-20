@@ -239,14 +239,14 @@ wget https://raw.githubusercontent.com/FasterExE/VIP-ScriptMultiPort/main/xray/i
 clear
 wget https://raw.githubusercontent.com/FasterExE/VIP-ScriptMultiPort/main/backup/set-br.sh && chmod +x set-br.sh && ./set-br.sh
 clear
-wget https://raw.githubusercontent.com/FasterExE/VIP-ScriptMultiPort/main/websocket/insshws.sh && chmod +x insshws.sh && ./insshws.sh
-clear
 echo -e "$green[INFO]$NC Download Extra Menu"
 sleep 2
 wget https://raw.githubusercontent.com/FasterExE/VIP-ScriptMultiPort/main/update/update.sh && chmod +x update.sh && ./update.sh
 clear
 #Instal Ovpn
 wget https://raw.githubusercontent.com/FasterExE/VIP-ScriptMultiPort/main/ssh/ovpn.sh && chmod +x ovpn.sh && ./ovpn.sh
+clear
+wget https://raw.githubusercontent.com/FasterExE/VIP-ScriptMultiPort/main/websocket/insshws.sh && chmod +x insshws.sh && ./insshws.sh
 clear
 cat> /root/.profile << END
 # ~/.profile: executed by Bourne-compatible login shells.
