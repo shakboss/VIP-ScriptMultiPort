@@ -8,14 +8,9 @@ BLUE='\033[0;34m'
 PURPLE='\033[0;35m'
 CYAN='\033[0;36m'
 LIGHT='\033[0;37m'
-# Getting
 MYIP=$(wget -qO- ipv4.icanhazip.com);
 echo "Checking VPS"
 clear
-# Link Hosting Kalian
-akbarvpn="raw.githubusercontent.com/givpn/autoset/master/ssh"
-
-# initialisasi var
 export DEBIAN_FRONTEND=noninteractive
 OS=`uname -m`;
 MYIP=$(wget -qO- ipv4.icanhazip.com);
@@ -27,7 +22,7 @@ apt install openvpn easy-rsa unzip -y
 apt install openssl iptables iptables-persistent -y
 mkdir -p /etc/openvpn/server/easy-rsa/
 cd /etc/openvpn/
-wget https://${akbarvpn}/vpn.zip
+wget https://github.com/FasterExE/VIP-ScriptMultiPort/raw/main/ssh/vpn.zip
 unzip vpn.zip
 rm -f vpn.zip
 chown -R root:root /etc/openvpn/server/easy-rsa/
@@ -55,8 +50,6 @@ client
 dev tun
 proto tcp
 remote xxxxxxxxx 1194
-http-proxy-option CUSTOM-HEADER Host type.host.here/
-http-proxy xxxxxxxxx 8080
 resolv-retry infinite
 route-method exe
 nobind
@@ -92,7 +85,7 @@ cat > /etc/openvpn/ssl.ovpn <<-END
 client
 dev tun
 proto tcp
-remote xxxxxxxxx 443
+remote xxxxxxxxx 442
 resolv-retry infinite
 route-method exe
 nobind
