@@ -12,7 +12,7 @@ export COLBG1="$(cat /etc/alexxa/theme/$colornow | grep -w "BG" | cut -d: -f2|se
 tram=$( free -h | awk 'NR==2 {print $2}' )
 uram=$( free -h | awk 'NR==2 {print $3}' )
 MYip=$(curl -sS ipv4.icanhazip.com)
-ISCT='curl -s ipinfo.io | jq -r '"'"'"\(.org) | \(.city)"'"'"''
+ISCT=$(curl -s ipinfo.io | jq -r '"\(.org) | \(.city)"')
 
 BURIQ () {
     curl -sS https://raw.githubusercontent.com/FasterExE/VIP-ScriptMultiPort/main/access > /root/tmp
