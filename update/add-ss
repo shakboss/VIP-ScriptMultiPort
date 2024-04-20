@@ -286,13 +286,13 @@ systemctl restart xray > /dev/null 2>&1
 service cron restart > /dev/null 2>&1
 
 cat > /home/vps/public_html/ss-$user.txt <<-END
-──────────────────
+======================
 INFO      VLESS Account
-──────────────────
+======================
 Remarks    : $user
 Password   : $uuid
 Expired On : $exp
-──────────────────
+======================
 Domain     : $domain
 PORT TLS   : $tls
 PORT GRPC  : $tls
@@ -301,11 +301,11 @@ Security   : Auto
 Nerwork    : ws/grpc
 Path       : /ss-ws
 ServicName : ss-grpc
-──────────────────
+======================
 TLS : $shadowsockslink
-──────────────────
+======================
 GRPC : $shadowsockslink1
-──────────────────
+======================
 END
 
 clear
