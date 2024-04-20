@@ -23,7 +23,7 @@ until [[ $user =~ ^[a-zA-Z0-9_]+$ && ${CLIENT_EXISTS} == '0' ]]; do
 echo -e "$COLOR1 ${NC} [Error] Username cannot be empty "
 echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}" 
 echo -e "$COLOR1┌────────────────────── BY ───────────────────────┐${NC}"
-echo -e "$COLOR1 ${NC}                • Ilyass Najhi VPN-STORE •                 $COLOR1 $NC"
+echo -e "$COLOR1 ${NC}         • Ilyass Najhi VPN-STORE •                 $COLOR1 $NC"
 echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}"
 echo ""
 read -n 1 -s -r -p "   Press any key to back on menu"
@@ -35,7 +35,7 @@ if [[ ${CLIENT_EXISTS} == '1' ]]; then
 echo -e "$COLOR1 ${NC} Please choose another name."
 echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}" 
 echo -e "$COLOR1┌────────────────────── BY ───────────────────────┐${NC}"
-echo -e "$COLOR1 ${NC}                • HayosiaStore •                 $COLOR1 $NC"
+echo -e "$COLOR1 ${NC}         • Ilyass Najhi VPN-STORE•                 $COLOR1 $NC"
 echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}"
 echo ""
 read -n 1 -s -r -p "   Press any key to back on menu"
@@ -56,14 +56,14 @@ vlesslink3="vless://${uuid}@${domain}:$tls?mode=gun&security=tls&encryption=none
 
 systemctl restart xray
 
-cat > /home/vps/public_html/vless-$user.txt <<-END
-──────────────────
+cat > /home/vps/public_html/vless-$user.txt <<-EN
+======================
 INFO      VLESS Account
-──────────────────
+======================
 Remarks    : $user
 id         : $uuid
 Expired On : $exp
-──────────────────
+======================
 Domain     : $domain
 PORT TLS   : $tls
 PORT NTLS  : $none
@@ -73,13 +73,13 @@ Security   : Auto
 Nerwork    : ws
 Path       : /vless
 ServicName : vless-grpc
-──────────────────
+======================
 TLS : $vlesslink1
-──────────────────
+======================
 None TLS : $vlesslink2
-──────────────────
+======================
 GRPC : $vlesslink3
-──────────────────
+======================
 END
 
 TEXT="
@@ -150,7 +150,7 @@ echo -e "$COLOR1 ${NC} Link GRPC : " | tee -a /etc/log-create-user.log
 echo -e "$COLOR1 ${NC} ${vlesslink3}"  | tee -a /etc/log-create-user.log
 echo -e "$COLOR1─────────────────────────────────────────────────${NC}"  | tee -a /etc/log-create-user.log
 echo -e "$COLOR1────────────────────── BY ───────────────────────${NC}" | tee -a /etc/log-create-user.log
-echo -e "$COLOR1 ${NC}                • Ghafoor Ali VPN-STORE •                 $COLOR1 $NC" | tee -a /etc/log-create-user.log
+echo -e "$COLOR1 ${NC}        • Ilyass Najhi VPN-STORE •                 $COLOR1 $NC" | tee -a /etc/log-create-user.log
 echo -e "$COLOR1─────────────────────────────────────────────────${NC}" | tee -a /etc/log-create-user.log
 echo ""  | tee -a /etc/log-create-user.log
 read -n 1 -s -r -p "   Press any key to back on menu" | tee -a /etc/log-create-user.log
