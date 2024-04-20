@@ -10,8 +10,6 @@ URL="https://api.telegram.org/bot$KEY/sendMessage"
 clear
 OWNER="ILYASS"
 domain=$(cat /etc/xray/domain)
-COLOR1="$(cat /etc/alexxa/theme/$colornow | grep -w "TEXT" | cut -d: -f2|sed 's/ //g')"
-COLBG1="$(cat /etc/alexxa/theme/$colornow | grep -w "BG" | cut -d: -f2|sed 's/ //g')"                    
 
 echo -e "$COLOR1┌─────────────────────────────────────────────────┐${NC}"
 echo -e "$COLOR1 ${NC} ${COLBG1}             • CREATE SSWS USER •              ${NC} $COLOR1 $NC"
