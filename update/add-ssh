@@ -107,11 +107,16 @@ OpenSSH    : $opensh
 Dropbear   : $db
 SSH-WS     : $portsshws
 SSH-SSL-WS : $wsssl
+OVPN-WS    : 2082
+OVPN-SSL-WS: $wsssl
 UDP-Custom : 1-65535
 SSL/TLS    : $ssl
 NS Slowdns : $dnsdomain
 DNS PubKey : $dnskey
 UDPGW      : 7100-7300
+======================
+Ovpn TCP: http://$IP:81/tcp.ovpn
+Ovpn UDP: http://$IP:81/udp.ovpn
 ======================
 GET wss://BUG/ HTTP/1.1[crlf]Host: $domen [crlf]Upgrade: websocket[crlf][crlf]
 ======================
@@ -130,24 +135,30 @@ TRX="
 <b>Tele : @IlyassExE</b>
 "
 TEXT="
-<code>────────────────────</code>
+<code>─────────────────────</code>
 <b>INFO        SSH Account</b>
-<code>────────────────────</code>
-<code>Username   : $Login</code>
-<code>Password   : $Pass</code>
-<code>────────────────────</code>
-<code>IP         : $IP</code>
-<code>Host       : $domen</code>
-<code>OpenSSH    : $opensh</code>
-<code>Dropbear   : $db</code>
-<code>SSH-WS     : $portsshws</code>
-<code>SSH-SSL-WS : $wsssl</code>
-<code>UDP-Custom : 1-65535</code>
-<code>SSL/TLS    : $ssl</code>
-<code>UDPGW      : 7100-7300</code>
-<code>────────────────────</code>
+<code>─────────────────────</code>
+<code>Username    : $Login</code>
+<code>Password    : $Pass</code>
+<code>─────────────────────</code>
+<code>IP          : $IP</code>
+<code>Host        : $domen</code>
+<code>OpenSSH     : $opensh</code>
+<code>OpenVPN     : 1194
+<code>Dropbear    : $db</code>
+<code>SSH-WS      : $portsshws</code>
+<code>SSH-SSL-WS  : $wsssl</code>
+<code>OVPN-WS     : 2082</code>
+<code>OVPN-SSL-WS : $wsssl</code>
+<code>UDP-Custom  : 1-65535</code>
+<code>SSL/TLS     : $ssl</code>
+<code>UDPGW       : 7100-7300</code>
+<code>─────────────────────</code>
+<code>Ovpn TCP:</code>http://$IP:81/tcp.ovpn
+<code>Ovpn UDP:</code>http://$IP:81/udp.ovpn
+<code>─────────────────────</code>
 <code>PADYLOAD : </code><code>GET wss://BUG/ HTTP/1.1[crlf]Host: $domen [crlf]Upgrade: websocket[crlf][crlf]</code>
-<code>────────────────────</code>
+<code>─────────────────────</code>
 <code>🔮 Details INFO :</code>
 http://${domen}:81/ssh-$Login.txt
 <code>️📅 Expired On : $exp</code>
@@ -165,23 +176,28 @@ echo -e "$COLOR1┌────────────────────�
 echo -e "$COLOR1 ${NC} ${COLBG1}               • SSH PANEL MENU •              ${NC} $COLOR1 $NC" | tee -a /etc/log-create-user.log
 echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}" | tee -a /etc/log-create-user.log
 echo -e "$COLOR1┌─────────────────────────────────────────────────┐${NC}" | tee -a /etc/log-create-user.log
-echo -e "$COLOR1 $NC  Username   : $Login"  | tee -a /etc/log-create-user.log
-echo -e "$COLOR1 $NC  Password   : $Pass" | tee -a /etc/log-create-user.log
-echo -e "$COLOR1 $NC  Expired On : $exp"  | tee -a /etc/log-create-user.log
+echo -e "$COLOR1 $NC  Username    : $Login"  | tee -a /etc/log-create-user.log
+echo -e "$COLOR1 $NC  Password    : $Pass" | tee -a /etc/log-create-user.log
+echo -e "$COLOR1 $NC  Expired On  : $exp"  | tee -a /etc/log-create-user.log
 echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}" | tee -a /etc/log-create-user.log
 echo -e "$COLOR1┌─────────────────────────────────────────────────┐${NC}" | tee -a /etc/log-create-user.log
-echo -e "$COLOR1 $NC  IP         : $IP"  | tee -a /etc/log-create-user.log
-echo -e "$COLOR1 $NC  Host       : $domen"  | tee -a /etc/log-create-user.log
-echo -e "$COLOR1 $NC  OpenSSH    : $opensh" | tee -a /etc/log-create-user.log
-echo -e "$COLOR1 $NC  Dropbear   : $db"  | tee -a /etc/log-create-user.log
-echo -e "$COLOR1 $NC  SSH-WS     : $portsshws"  | tee -a /etc/log-create-user.log
-echo -e "$COLOR1 $NC  SSH-SSL-WS : $wsssl"  | tee -a /etc/log-create-user.log
-echo -e "$COLOR1 $NC  SSL/TLS    :$ssl"  | tee -a /etc/log-create-user.log
-echo -e "$COLOR1 $NC  UDP-CUSTOM : 1-65535"  | tee -a /etc/log-create-user.log
-echo -e "$COLOR1 $NC  NS Slowdns : $dnsdomain"  | tee -a /etc/log-create-user.log
-echo -e "$COLOR1 $NC  DNS PubKey : $dnskey" | tee -a /etc/log-create-user.log
-echo -e "$COLOR1 $NC  UDPGW      : 7100-7300"  | tee -a /etc/log-create-user.log
+echo -e "$COLOR1 $NC  IP          : $IP"  | tee -a /etc/log-create-user.log
+echo -e "$COLOR1 $NC  Host        : $domen"  | tee -a /etc/log-create-user.log
+echo -e "$COLOR1 $NC  OpenSSH     : $opensh" | tee -a /etc/log-create-user.log
+echo -e "$COLOR1 $NC  OpenVPS     : 1194" | tee -a /etc/log-create-user.log
+echo -e "$COLOR1 $NC  Dropbear    : $db"  | tee -a /etc/log-create-user.log
+echo -e "$COLOR1 $NC  SSH-WS      : $portsshws"  | tee -a /etc/log-create-user.log
+echo -e "$COLOR1 $NC  SSH SSL/TLS : $ssl"  | tee -a /etc/log-create-user.log
+echo -e "$COLOR1 $NC  OVPN-WS     : 2082"  | tee -a /etc/log-create-user.log
+echo -e "$COLOR1 $NC  UDP-CUSTOM  : 1-65535"  | tee -a /etc/log-create-user.log
+echo -e "$COLOR1 $NC  NS Slowdns  : $dnsdomain"  | tee -a /etc/log-create-user.log
+echo -e "$COLOR1 $NC  DNS PubKey  : $dnskey" | tee -a /etc/log-create-user.log
+echo -e "$COLOR1 $NC  UDPGW       : 7100-7300"  | tee -a /etc/log-create-user.log
 echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}" | tee -a /etc/log-create-user.log
+echo -e "$COLOR1┌─────────────────────────────────────────────────┐${NC}" | tee -a /etc/log-create-user.log
+echo -e "  Ovpn TCP: http://$IP:81/tcp.ovpn" | tee -a /etc/log-create-user.log
+echo -e "  Ovpn UDP: http://$IP:81/udp.ovpn" | tee -a /etc/log-create-user.log
+echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}"  | tee -a /etc/log-create-user.log
 echo -e "$COLOR1┌─────────────────────────────────────────────────┐${NC}" | tee -a /etc/log-create-user.log
 echo -e "  GET wss://BUG/ HTTP/1.1[crlf]Host: $domen [crlf]Upgrade: websocket[crlf][crlf]" | tee -a /etc/log-create-user.log
 echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}"  | tee -a /etc/log-create-user.log
@@ -193,22 +209,24 @@ echo -e "$COLOR1┌────────────────────�
 echo -e "$COLOR1 ${NC} ${COLBG1}               • SSH PANEL MENU •              ${NC} $COLOR1 $NC" | tee -a /etc/log-create-user.log
 echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}" | tee -a /etc/log-create-user.log
 echo -e "$COLOR1┌─────────────────────────────────────────────────┐${NC}" | tee -a /etc/log-create-user.log
-echo -e "$COLOR1 $NC  Username   : $Login"  | tee -a /etc/log-create-user.log
-echo -e "$COLOR1 $NC  Password   : $Pass" | tee -a /etc/log-create-user.log
-echo -e "$COLOR1 $NC  Expired On : $exp"  | tee -a /etc/log-create-user.log
+echo -e "$COLOR1 $NC  Username    : $Login"  | tee -a /etc/log-create-user.log
+echo -e "$COLOR1 $NC  Password    : $Pass" | tee -a /etc/log-create-user.log
+echo -e "$COLOR1 $NC  Expired On  : $exp"  | tee -a /etc/log-create-user.log
 echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}" | tee -a /etc/log-create-user.log
 echo -e "$COLOR1┌─────────────────────────────────────────────────┐${NC}" | tee -a /etc/log-create-user.log
-echo -e "$COLOR1 $NC  IP         : $IP"  | tee -a /etc/log-create-user.log
-echo -e "$COLOR1 $NC  Host       : $domen"  | tee -a /etc/log-create-user.log
-echo -e "$COLOR1 $NC  OpenSSH    : $opensh" | tee -a /etc/log-create-user.log
-echo -e "$COLOR1 $NC  Dropbear   : $db"  | tee -a /etc/log-create-user.log
-echo -e "$COLOR1 $NC  SSH-WS     : $portsshws"  | tee -a /etc/log-create-user.log
-echo -e "$COLOR1 $NC  SSH-SSL-WS : $wsssl"  | tee -a /etc/log-create-user.log
-echo -e "$COLOR1 $NC  SSL/TLS    :$ssl"  | tee -a /etc/log-create-user.log
-echo -e "$COLOR1 $NC  UDP-CUSTOM : 1-65535"  | tee -a /etc/log-create-user.log
-echo -e "$COLOR1 $NC  NS Slowdns : $dnsdomain"
-echo -e "$COLOR1 $NC  DNS PubKey : $dnskey" 
-echo -e "$COLOR1 $NC  UDPGW      : 7100-7300"  | tee -a /etc/log-create-user.log
+echo -e "$COLOR1 $NC  IP          : $IP"  | tee -a /etc/log-create-user.log
+echo -e "$COLOR1 $NC  Host        : $domen"  | tee -a /etc/log-create-user.log
+echo -e "$COLOR1 $NC  OpenSSH     : $opensh" | tee -a /etc/log-create-user.log
+echo -e "$COLOR1 $NC  Dropbear    : $db"  | tee -a /etc/log-create-user.log
+echo -e "$COLOR1 $NC  SSH-WS      : $portsshws"  | tee -a /etc/log-create-user.log
+echo -e "$COLOR1 $NC  SSH-SSL-WS  : $wsssl"  | tee -a /etc/log-create-user.log
+echo -e "$COLOR1 $NC  OVPN-WS     : 2082"  | tee -a /etc/log-create-user.log
+echo -e "$COLOR1 $NC  OVPN-SSL-WS : $wsssl"  | tee -a /etc/log-create-user.log
+echo -e "$COLOR1 $NC  SSL/TLS     : $ssl"  | tee -a /etc/log-create-user.log
+echo -e "$COLOR1 $NC  UDP-CUSTOM  : 1-65535"  | tee -a /etc/log-create-user.log
+echo -e "$COLOR1 $NC  NS Slowdns  : $dnsdomain"
+echo -e "$COLOR1 $NC  DNS PubKey  : $dnskey" 
+echo -e "$COLOR1 $NC  UDPGW       : 7100-7300"  | tee -a /etc/log-create-user.log
 echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}" | tee -a /etc/log-create-user.log
 echo -e "$COLOR1┌─────────────────────────────────────────────────┐${NC}" | tee -a /etc/log-create-user.log
 echo -e "  GET wss://BUG/ HTTP/1.1[crlf]Host: $domen [crlf]Upgrade: websocket[crlf][crlf]" | tee -a /etc/log-create-user.log
