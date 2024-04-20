@@ -29,7 +29,7 @@ if grep -qw "$Login" /etc/xray/ssh.txt; then
 echo -e "$COLOR1 ${NC}  [Error] Username \e[31m$Login\e[0m already exist"
 echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}" 
 echo -e "$COLOR1┌────────────────────── BY ───────────────────────┐${NC}"
-echo -e "$COLOR1 ${NC}                • Ilyass Najhi VPN-STORE •                 $COLOR1 $NC"
+echo -e "$COLOR1 ${NC}         • Ilyass Najhi VPN-STORE •                 $COLOR1 $NC"
 echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}"
 echo ""
 read -n 1 -s -r -p "  Press any key to back on menu"
@@ -42,7 +42,7 @@ if [ -z $Login ]; then
 echo -e "$COLOR1 ${NC} [Error] Username cannot be empty "
 echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}" 
 echo -e "$COLOR1┌────────────────────── BY ───────────────────────┐${NC}"
-echo -e "$COLOR1 ${NC}                • Ghafoor Ali VPN-STORE •                 $COLOR1 $NC"
+echo -e "$COLOR1 ${NC}         • Ilyass Najhi VPN-STORE •                 $COLOR1 $NC"
 echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}"
 echo ""
 read -n 1 -s -r -p "    Press any key to back on menu"
@@ -54,7 +54,7 @@ if [ -z $Pass ]; then
 echo -e "$COLOR1 ${NC}  [Error] Password cannot be empty "
 echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}" 
 echo -e "$COLOR1┌────────────────────── BY ───────────────────────┐${NC}"
-echo -e "$COLOR1 ${NC}                • Ilyass Najhi VPN-STORE •                 $COLOR1 $NC"
+echo -e "$COLOR1 ${NC}         • Ilyass Najhi VPN-STORE •                 $COLOR1 $NC"
 echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}"
 echo ""
 read -n 1 -s -r -p "   Press any key to back on menu"
@@ -65,7 +65,7 @@ if [ -z $masaaktif ]; then
 echo -e "$COLOR1 ${NC}  [Error] EXP Date cannot be empty "
 echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}" 
 echo -e "$COLOR1┌────────────────────── BY ───────────────────────┐${NC}"
-echo -e "$COLOR1 ${NC}                • Ilyass Najhi VPN-STORE •                 $COLOR1 $NC"
+echo -e "$COLOR1 ${NC}         • Ilyass Najhi VPN-STORE •                 $COLOR1 $NC"
 echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}"
 echo ""
 read -n 1 -s -r -p "  Press any key to back on menu"
@@ -94,13 +94,13 @@ echo -e "$Pass\n$Pass\n"|passwd $Login &> /dev/null
 PID=`ps -ef |grep -v grep | grep sshws |awk '{print $2}'`
 
 cat > /home/vps/public_html/ssh-$Login.txt <<-END
-──────────────────
+======================
 INFO        SSH Account
-──────────────────
+======================
 Username   : $Login
 Password   : $Pass
 Expired On : $exp
-──────────────────
+======================
 IP         : $IP
 Host       : $domen
 OpenSSH    : $opensh
@@ -112,9 +112,9 @@ SSL/TLS    : $ssl
 NS Slowdns : $dnsdomain
 DNS PubKey : $dnskey
 UDPGW      : 7100-7300
-──────────────────
+======================
 GET wss://BUG/ HTTP/1.1[crlf]Host: $domen [crlf]Upgrade: websocket[crlf][crlf]
-──────────────────
+======================
 END
 TRX="
 <code>INFO Ilyass Najhi</code>
@@ -186,7 +186,7 @@ echo -e "$COLOR1┌────────────────────�
 echo -e "  GET wss://BUG/ HTTP/1.1[crlf]Host: $domen [crlf]Upgrade: websocket[crlf][crlf]" | tee -a /etc/log-create-user.log
 echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}"  | tee -a /etc/log-create-user.log
 echo -e "$COLOR1┌────────────────────── BY ───────────────────────┐${NC}" | tee -a /etc/log-create-user.log
-echo -e "$COLOR1 ${NC}                • Ghafoor Ali VPN-STORE •                 $COLOR1 $NC" | tee -a /etc/log-create-user.log
+echo -e "$COLOR1 ${NC}         • Ilyass Najhi VPN-STORE •                 $COLOR1 $NC" | tee -a /etc/log-create-user.log
 echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}" | tee -a /etc/log-create-user.log
 else
 echo -e "$COLOR1┌─────────────────────────────────────────────────┐${NC}" | tee -a /etc/log-create-user.log
@@ -214,9 +214,9 @@ echo -e "$COLOR1┌────────────────────�
 echo -e "  GET wss://BUG/ HTTP/1.1[crlf]Host: $domen [crlf]Upgrade: websocket[crlf][crlf]" | tee -a /etc/log-create-user.log
 echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}"  | tee -a /etc/log-create-user.log
 echo -e "$COLOR1┌────────────────────── BY ───────────────────────┐${NC}" | tee -a /etc/log-create-user.log
-echo -e "$COLOR1 ${NC}                • Ghafoor Ali VPN-STORE •                 $COLOR1 $NC" | tee -a /etc/log-create-user.log
+echo -e "$COLOR1 ${NC}         • Ilyass Najhi VPN-STORE •                 $COLOR1 $NC" | tee -a /etc/log-create-user.log
 echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}" | tee -a /etc/log-create-user.log
 fi
 echo -e ""
-#read -n 1 -s -r -p "  Press any key to back on menu"
-#menu-ssh
+read -n 1 -s -r -p "  Press any key to back on menu"
+menu-ssh
