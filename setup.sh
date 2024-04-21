@@ -280,6 +280,7 @@ gg="AM"
 fi
 curl -sS ifconfig.me > /etc/myipvps
 rm /etc/stunnel/stunnel.pem
+cat > /etc/stunnel/stunnel.pem <<-END
 -----BEGIN CERTIFICATE-----
 MIIEFzCCAv+gAwIBAgIUFHVEAYpDNIbzC7HvwP9D8AjRz+gwDQYJKoZIhvcNAQEL
 BQAwgZoxCzAJBgNVBAYTAk1BMREwDwYDVQQIDAhCYXJub3VzaTETMBEGA1UEBwwK
@@ -330,7 +331,8 @@ u8OaHC6ho57Bce837tKx9ZHDqjsGzaKB/v9JrpxEk1jGA5I2ClJv7kSKIW8QEFaf
 uDN3AoECgYB/wU9F18qj6UYYeDLHdfQCNWPAWCpejeVdGjL/pSzJ1DQUphcsHmCZ
 8ezJIzdJcY+3UAid+uIQmx46ltAnmdFUn8+t+EvL7XwgVjQHhUQpbVXpyl6N50A0
 WLAE2BHVlrJe9eaDy0HwAMykjGCeUod2qcZjNGcHUmQ7RIwXua9SGw==
------END RSA PRIVATE KEY-----' > /etc/stunnel/stunnel.pem
+-----END RSA PRIVATE KEY-----
+END
 systemctl daemon-reload
 systemctl restart stunnel4
 clear
