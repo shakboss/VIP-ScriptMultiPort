@@ -869,7 +869,7 @@ vps_info() {
 # [UDP - Request]
 menu_udp_request() {
   make_service
-  title "\033[3;40m${a10:-•UDP Custom | UDP Request Manager} by @FasterExE•"
+  title "\033[3;40m${a10:-•UDP Custom | UDP Request Manager} by @shakboss•"
   print_center -ama ' Version: ⇢ 2.5-Lite'
   print_center -ama ' UDP REQUEST'
   print_center -ama ' Tunnel App : SocksIP'
