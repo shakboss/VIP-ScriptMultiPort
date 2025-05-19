@@ -1,37 +1,5 @@
 #!/bin/bash
 #=== setup ===
-cd 
-rm -rf /root/udp
-mkdir -p /root/udp
-rm -rf /etc/UDPRequest
-mkdir -p /etc/UDPRequest
-sudo touch /etc/UDPRequest/udp-request
-udp_dir='/etc/UDPRequest'
-udp_file='/etc/UDPRequest/udp-request'
-
-sudo apt update -y
-sudo apt upgrade -y
-sudo apt install -y wget
-sudo apt install -y curl
-sudo apt install -y neofetch
-
-source <(curl -sSL 'https://raw.githubusercontent.com/prjkt-nv404/UDP-Request-Manager/main/module/module')
-
-time_reboot() {
-  print_center -ama "${a92:-System/Server Reboot In} $1 ${a93:-Seconds}"
-  REBOOT_TIMEOUT="$1"
-
-  while [ $REBOOT_TIMEOUT -gt 0 ]; do
-    print_center -ne "-$REBOOT_TIMEOUT-\r"
-    sleep 1
-    : $((REBOOT_TIMEOUT--))
-  done
-  rm /home/ubuntu/install.sh &>/dev/null
-  rm /root/install.sh &>/dev/null
-  echo -e "\033[01;31m\033[1;33m More Updates, Follow Us On \033[1;31m(\033[1;36mTelegram\033[1;31m): \033[1;37m@voltssh\033[0m"
-  reboot
-}
-
 #======= CONFIGURATION OF UDP-CUSTOM & UDP-REQUEST ========
 
 make_service() {
